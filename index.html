@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMYM — Syro Malabar Youth Movement | Faith. Fellowship. Formation.</title>
-    <meta name="description" content="SMYM is the official youth movement of the Syro Malabar Church, empowering 1.6 million+ Catholic youth worldwide through faith, leadership, and community.">
+    <title>SMYM Kanjirappally — Syro Malabar Youth Movement | Faith. Fellowship. Formation.</title>
+    <meta name="description" content="Official website of SMYM Kanjirappally, the youth wing of the Syro-Malabar Catholic Diocese of Kanjirapally, patronaged by Bishop Mar Jose Pulickal, covering 148 parishes.">
 
     <!-- Tab Favicon -->
     <link rel="icon" type="image/png" href="logo/logo.png">
@@ -12,7 +12,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Requested fonts: Lato, Poppins, Raleway, Oswald, Roboto + Great Vibes accent -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&family=Oswald:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -20,7 +21,13 @@
 <body>
 
 <!-- ══════════════════════════════════════════
-  CURSOR GLOW
+  CUSTOM CURSOR
+══════════════════════════════════════════ -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ══════════════════════════════════════════
+  CURSOR GLOW (ambient)
 ══════════════════════════════════════════ -->
 <div class="cursor-glow" id="cursor-glow"></div>
 
@@ -33,9 +40,6 @@
   FLOATING CHRISTIAN DOODLES
 ══════════════════════════════════════════ -->
 <div class="doodle-layer" aria-hidden="true">
-    <svg class="doodle cross-1" viewBox="0 0 40 40"><rect x="17" y="4" width="6" height="32" rx="2"/><rect x="4" y="13" width="32" height="6" rx="2"/></svg>
-    <svg class="doodle cross-2" viewBox="0 0 40 40"><rect x="17" y="4" width="6" height="32" rx="2"/><rect x="4" y="13" width="32" height="6" rx="2"/></svg>
-    <svg class="doodle cross-3" viewBox="0 0 40 40"><rect x="17" y="4" width="6" height="32" rx="2"/><rect x="4" y="13" width="32" height="6" rx="2"/></svg>
     <svg class="doodle dove-1" viewBox="0 0 60 40"><path d="M30 20 C20 5 0 8 2 18 C4 26 16 24 22 20 C24 19 26 18 30 20 C34 22 40 28 50 22 C58 17 56 8 48 10 C42 12 36 18 30 20Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M30 20 L28 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M25 32 L33 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     <svg class="doodle dove-2" viewBox="0 0 60 40"><path d="M30 20 C20 5 0 8 2 18 C4 26 16 24 22 20 C24 19 26 18 30 20 C34 22 40 28 50 22 C58 17 56 8 48 10 C42 12 36 18 30 20Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M30 20 L28 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M25 32 L33 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </div>
@@ -57,15 +61,14 @@
 
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#stats">Impact</a></li>
             <li><a href="#timeline">History</a></li>
+            <li><a href="#executives">Executives</a></li>
+            <li><a href="#activities">Activities</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <a href="#join" class="btn btn-nav magnetic">Join SMYM</a>
+        <a href="#join" class="btn-nav">Join</a>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -77,9 +80,9 @@
 <div class="mobile-menu glass" id="mobile-menu">
     <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#mission">Mission</a></li>
+        <li><a href="#timeline">History</a></li>
+        <li><a href="#executives">Executives</a></li>
         <li><a href="#activities">Activities</a></li>
-        <li><a href="#stats">Impact</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -87,9 +90,18 @@
 
 <!-- ══════════════════════════════════════════
   SECTION 1: HERO
-══════════════════════════════════════════ -->
+  ══════════════════════════════════════════ -->
 <section class="hero" id="hero">
-    <!-- Light rays -->
+    <!-- Soft gradient blobs -->
+    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+    <div class="hero-noise" aria-hidden="true"></div>
+
+    <!-- Premium light grid overlay -->
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+    <!-- Subtle vignette rays -->
     <div class="hero-rays" aria-hidden="true">
         <div class="ray ray-1"></div>
         <div class="ray ray-2"></div>
@@ -98,62 +110,84 @@
         <div class="ray ray-5"></div>
     </div>
 
+    <!-- ═══════════════════════════════════════
+         LOGO CIRCLE — direct child of #hero
+         GSAP will set initial fullscreen size,
+         then shrink to 320px on scroll.
+         position:absolute keeps it inside hero
+         so Stage 5 yPercent moves logo too.
+    ════════════════════════════════════════ -->
+    <div class="logo-glass-bg" id="hero-video-wrapper">
+        <!-- Rotating gradient ring -->
+        <div class="logo-gradient-ring"></div>
+        <!-- Orbiting light streaks -->
+        <div class="logo-orbit-streak"></div>
+        <!-- Expanding ripple waves -->
+        <div class="logo-ripple-wave ripple-1"></div>
+        <div class="logo-ripple-wave ripple-2"></div>
+
+        <video id="hero-logo" class="hero-logo-vid" muted playsinline autoplay>
+            <source src="logo/LOGO.mp4" type="video/mp4">
+        </video>
+        <!-- Sparkle Particles -->
+        <div class="logo-sparkle" style="--sx: -45px; --sy: -65px; animation-delay: 0s;"></div>
+        <div class="logo-sparkle" style="--sx: 55px; --sy: -85px; animation-delay: 1.5s;"></div>
+        <div class="logo-sparkle" style="--sx: -75px; --sy: 65px; animation-delay: 3s;"></div>
+        <div class="logo-sparkle" style="--sx: 65px; --sy: 75px; animation-delay: 2.2s;"></div>
+    </div>
+
+    <!-- 3-column content grid -->
     <div class="hero-inner container">
-        <!-- Left Column: Title & Tagline -->
+        <!-- Left Column: Title & Tagline & CTA -->
         <div class="hero-left" id="hero-left-details">
-            <div class="hero-eyebrow" id="hero-eyebrow">
-                <span class="badge-dot"></span>
-                Official Youth Movement of the Syro Malabar Church
-            </div>
+            <div class="hero-parallax-left-inner">
+                <div class="hero-eyebrow" id="hero-eyebrow">
+                    <span class="badge-dot"></span>
+                    Official Youth Movement of the Syro Malabar Church
+                </div>
 
-            <h1 class="hero-title" id="hero-title">
-                <span class="line-mask"><span class="line-inner">Syro Malabar</span></span>
-                <span class="line-mask"><span class="line-inner">Youth</span></span>
-                <span class="line-mask line-script"><span class="line-inner">Movement</span></span>
-            </h1>
+                <h1 class="hero-title" id="hero-title">
+                    SYRO MALABAR<br>YOUTH
+                    <span class="line-script">Movement</span>
+                </h1>
 
-            <p class="hero-tagline" id="hero-tagline">Faith. Fellowship. Formation.</p>
-        </div>
-
-        <!-- Center Column: Logo Video + 3D Canvas -->
-        <div class="hero-center" id="hero-center-logo">
-            <div class="hero-3d-bg">
-                <canvas id="three-canvas"></canvas>
-            </div>
-            <div class="hero-video-wrapper" id="hero-video-wrapper">
-                <video id="hero-intro" class="hero-logo-vid active" muted playsinline autoplay>
-                    <source src="logo/logo.mp4" type="video/mp4">
-                </video>
-                <video id="hero-loop" class="hero-logo-vid" muted playsinline loop>
-                    <source src="logo/logo-loop.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="hero-right-glow"></div>
-        </div>
-
-        <!-- Right Column: Description & CTAs -->
-        <div class="hero-right-details" id="hero-right-details">
-            <p class="hero-mission" id="hero-mission">
-                Empowering Catholic youth worldwide to live Christ-centered lives and serve society through faith, leadership, and unity.
-            </p>
-
-            <div class="hero-cta" id="hero-cta">
-                <a href="#join" class="btn btn-primary magnetic" id="btn-join">
+                <p class="hero-tagline" id="hero-tagline">Faith. Fellowship. Formation.</p>
+                <p class="hero-desc" id="hero-desc">Empowering Catholic youth worldwide to live Christ-centered lives and serve society through faith, leadership, and unity.</p>
+                
+                <a href="#join" class="hero-cta-btn magnetic" id="btn-hero-join">
                     <span>Join SMYM</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <a href="#activities" class="btn btn-ghost magnetic">
-                    <span>Explore Activities</span>
-                </a>
+            </div>
+        </div>
+
+        <!-- Center Column: invisible spacer (logo is absolutely positioned above grid) -->
+        <div class="hero-center" id="hero-center-logo" aria-hidden="true"></div>
+
+        <!-- Right Column: Interactive Blocks -->
+        <div class="hero-right-details" id="hero-right-details">
+            <div class="hero-parallax-right-inner">
+                <!-- Quote Card -->
+                <div class="hero-right-quote-card glass" id="hero-right-quote">
+                    <p>"Embrace Good and Reject Evil"</p>
+                    <cite>— Romans 12:9</cite>
+                </div>
+                
+                <!-- Statistics Card -->
+                <div class="hero-right-stats-card glass" id="hero-right-stats">
+                    <span class="right-stat-val">1.6M+</span>
+                    <span class="right-stat-lbl">Active Members</span>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="hero-right-deco" id="hero-right-deco">
+                    <div class="deco-divider-line"></div>
+                    <div class="deco-star-spin">✦</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator reveal-fade">
-        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        <span>Scroll</span>
-    </div>
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -162,15 +196,15 @@
 <section class="section about-section" id="about">
     <div class="container">
         <div class="section-label reveal-fade">Who We Are</div>
-        <h2 class="section-title reveal-up">About <em>SMYM</em></h2>
+        <h2 class="section-title reveal-up">About <em>SMYM</em><br>KANJIRAPPALLY</h2>
 
         <div class="about-grid">
             <div class="about-content reveal-up">
                 <p class="about-lead">
-                    Syro Malabar Youth Movement (SMYM) is the official youth movement of the Syro Malabar Church — one of the 23 Eastern Catholic Churches in full communion with Rome.
+                    The Syro-Malabar Youth Movement (SMYM) in the Eparchy of Kanjirappally is the official youth wing of the Syro-Malabar Catholic Church.
                 </p>
                 <p class="about-body">
-                    Founded to strengthen the spiritual, moral, and social life of Catholic youth, SMYM unites millions of young men and women across the globe under the banner of Christ's love. Through formation programs, community service, and vibrant gatherings, SMYM shapes the leaders of tomorrow's Church and society.
+                    Formed to drive the holistic and spiritual development of young Catholics, it operates under the patronage of the Catholic Diocese of Kanjirapally, which is currently led by Bishop Mar Jose Pulickal. The diocese's geographic spread spans across 148 parishes in the civil districts of Kottayam, Idukki, and Pathanamthitta in Kerala, India.
                 </p>
                 <div class="about-quote">
                     <span class="quote-mark">"</span>
@@ -185,54 +219,320 @@
                     <span class="stat-label">Youth Worldwide</span>
                 </div>
                 <div class="stat-card glass reveal-scale" data-tilt>
-                    <span class="stat-num gold" data-target="10000" data-suffix="+">0</span>
-                    <span class="stat-label">Communities</span>
+                    <span class="stat-num gold" data-target="148" data-suffix="">0</span>
+                    <span class="stat-label">Parishes</span>
                 </div>
                 <div class="stat-card glass reveal-scale" data-tilt>
-                    <span class="stat-num crimson">50+</span>
-                    <span class="stat-label">Years of Mission</span>
-                </div>
-                <div class="stat-card glass reveal-scale" data-tilt>
-                    <span class="stat-num gold" data-target="13">0</span>
+                    <span class="stat-num crimson" data-target="13" data-suffix="">0</span>
                     <span class="stat-label">Foranes</span>
                 </div>
+                <div class="stat-card glass reveal-scale" data-tilt>
+                    <span class="stat-num gold" data-target="3" data-suffix="">0</span>
+                    <span class="stat-label">Districts Spread</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  SECTION 3: MISSION & VISION
-══════════════════════════════════════════ -->
-<section class="section mission-section" id="mission">
+  SECTION 3: HISTORY (Timeline)
+  ══════════════════════════════════════════ -->
+<section class="section timeline-section" id="timeline">
     <div class="container">
-        <div class="section-label reveal-fade">Our Purpose</div>
-        <h2 class="section-title reveal-up">Mission &amp; <em>Vision</em></h2>
+        <div class="section-label reveal-fade">Our Journey</div>
+        <h2 class="section-title reveal-up">A Legacy of <em>Faith &amp; Action</em></h2>
 
-        <div class="mv-grid">
-            <div class="mv-card glass reveal-scale" data-tilt>
-                <div class="mv-icon">
-                    <svg viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="22" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/><path d="M25 10 L25 40 M14 19 L36 19 M14 31 L36 31" stroke="currentColor" stroke-width="1.5"/><circle cx="25" cy="25" r="5" fill="currentColor" opacity="0.15"/></svg>
+        <div class="timeline">
+            <div class="timeline-line"></div>
+
+            <div class="tl-item tl-left reveal-fade">
+                <div class="tl-card glass" data-tilt>
+                    <span class="tl-year">1978</span>
+                    <h3>Yuvaddepthy - KCYM Roots</h3>
+                    <p>The youth movement originally functioned under the name Yuvaddepthy - KCYM (Kerala Catholic Youth Movement), becoming active in the Diocese of Kanjirapally to drive holistic youth development.</p>
                 </div>
-                <div class="mv-tag">Mission</div>
-                <h3>Bound Together for God's Kingdom</h3>
-                <p>To bind together the youth of the Syro Malabar Church for the Kingdom of God and society, fostering unity, discipleship, and active participation in the life of the Church.</p>
+                <div class="tl-dot"></div>
             </div>
 
-            <div class="mv-card glass reveal-scale" data-tilt style="--delay:0.15s">
-                <div class="mv-icon gold-icon">
-                    <svg viewBox="0 0 50 50" fill="none"><path d="M25 5 L30 18 L44 18 L33 27 L37 40 L25 32 L13 40 L17 27 L6 18 L20 18 Z" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.08"/></svg>
+            <div class="tl-item tl-right reveal-fade">
+                <div class="tl-dot"></div>
+                <div class="tl-card glass" data-tilt>
+                    <span class="tl-year">1986</span>
+                    <h3>State-wide Peace Rallies</h3>
+                    <p>KCYM conducts four historic regional rallies starting from Kanjirapally, Kollam, Kodungalloor, and Thrissur during the World Peace Year.</p>
                 </div>
-                <div class="mv-tag gold-tag">Vision</div>
-                <h3>Integral Development in Faith</h3>
-                <p>To foster the integral development of every young person — spiritually, morally, intellectually, and socially — rooted in the Gospel and the rich traditions of the Syro Malabar Church.</p>
             </div>
+
+            <div class="tl-item tl-left reveal-fade">
+                <div class="tl-card glass" data-tilt>
+                    <span class="tl-year">2011</span>
+                    <h3>Global Unification Initiatives</h3>
+                    <p>The Syro-Malabar Laity Commission initiates efforts to unify various youth ministries across the globe under one banner.</p>
+                </div>
+                <div class="tl-dot"></div>
+            </div>
+
+            <div class="tl-item tl-right reveal-fade">
+                <div class="tl-dot"></div>
+                <div class="tl-card glass" data-tilt>
+                    <span class="tl-year">2014</span>
+                    <h3>Official SMYM Launch</h3>
+                    <p>On August 30, 2014, the Synod of Bishops approves and officially launches the unified global Syro-Malabar Youth Movement (SMYM) structure.</p>
+                </div>
+            </div>
+
+            <div class="tl-item tl-left reveal-fade">
+                <div class="tl-card glass" data-tilt>
+                    <span class="tl-year">2022</span>
+                    <h3>Unified Integration</h3>
+                    <p>KCYM Senate meetings officially incorporate SMYM and other rite-based movements into a coordinated state federation structure.</p>
+                </div>
+                <div class="tl-dot"></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4.5rem;" class="reveal-fade">
+            <a href="history.html" class="btn btn-gold pulse-btn magnetic" id="btn-explore-history">
+                <span>Explore Complete History</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  SECTION 4: CORE ACTIVITIES
+  SECTION 4: EXECUTIVES (Premium Grid)
+══════════════════════════════════════════ -->
+<section class="section executives-premium-section" id="executives">
+    <!-- Animated background elements -->
+    <div class="exec-bg-particles" aria-hidden="true"></div>
+    <div class="exec-bg-blur exec-bg-blur-1" aria-hidden="true"></div>
+    <div class="exec-bg-blur exec-bg-blur-2" aria-hidden="true"></div>
+    <div class="exec-bg-line exec-bg-line-1" aria-hidden="true"></div>
+    <div class="exec-bg-line exec-bg-line-2" aria-hidden="true"></div>
+
+    <div class="container">
+        <!-- Section Header -->
+        <div class="exec-header">
+            <div class="section-label reveal-fade" style="color:rgba(255,100,100,0.9);">Leadership</div>
+            <h2 class="exec-section-title reveal-up">SMYM Executive <em>Committee</em></h2>
+            <p class="exec-section-sub reveal-fade"><em>A team dedicated to serving with faith, leadership, and commitment.</em></p>
+        </div>
+
+        <!-- Executive Grid: 4 cols desktop, 3 tablet, 2 mobile -->
+        <div class="exec-premium-grid" id="exec-grid">
+
+            <!-- Card 1 -->
+            <div class="exec-premium-card" data-index="0" data-delay="0">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/1.png" alt="Executive 1" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>1</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="exec-premium-card" data-index="1" data-delay="1">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/2.png" alt="Executive 2" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>2</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="exec-premium-card" data-index="2" data-delay="2">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/3.png" alt="Executive 3" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>3</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="exec-premium-card" data-index="3" data-delay="3">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/4.png" alt="Executive 4" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>4</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="exec-premium-card" data-index="4" data-delay="0">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/5.png" alt="Executive 5" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>5</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="exec-premium-card" data-index="5" data-delay="1">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/6.png" alt="Executive 6" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>6</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="exec-premium-card" data-index="6" data-delay="2">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/7.png" alt="Executive 7" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>7</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="exec-premium-card" data-index="7" data-delay="3">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/8.png" alt="Executive 8" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>8</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="exec-premium-card" data-index="8" data-delay="0">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/9.png" alt="Executive 9" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>9</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="exec-premium-card" data-index="9" data-delay="1">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/10.png" alt="Executive 10" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>10</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="exec-premium-card" data-index="10" data-delay="2">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/11.png" alt="Executive 11" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>11</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="exec-premium-card" data-index="11" data-delay="3">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/12.png" alt="Executive 12" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>12</span></div>
+                    </div>
+                    <div class="exec-card-body">
+                        <h3 class="exec-name">Executive Name</h3>
+                        <span class="exec-designation">Designation</span>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  SECTION 5: CORE ACTIVITIES
 ══════════════════════════════════════════ -->
 <section class="section activities-section" id="activities">
     <div class="container">
@@ -248,13 +548,13 @@
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:1">
                 <div class="act-icon">🚫</div>
-                <h3>Substance Abuse Prevention</h3>
-                <p>Campus-wide awareness campaigns empowering youth to reject addiction and embrace wholeness.</p>
+                <h3>Anti-Abuse Workshops</h3>
+                <p>Runs institutional anti-substance abuse workshops on local campuses to empower youth.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:2">
                 <div class="act-icon">🌿</div>
-                <h3>De-Addiction Clubs</h3>
-                <p>Safe, supportive communities for recovery and peer encouragement on campuses.</p>
+                <h3>De-Addiction Hubs</h3>
+                <p>Sets up functional de-addiction hubs and safe peer support recovery circles.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:3">
                 <div class="act-icon">⛺</div>
@@ -268,8 +568,8 @@
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:5">
                 <div class="act-icon">🤝</div>
-                <h3>Social Service</h3>
-                <p>Hands-on community service, charity drives, and social justice advocacy.</p>
+                <h3>Humanitarian Relief</h3>
+                <p>Organizes direct community assistance during crises, raising relief funds and deploying food shipments (like bread and milk packs) to flood-affected communities like Chellanam.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:6">
                 <div class="act-icon">🙏</div>
@@ -277,9 +577,9 @@
                 <p>Regular gatherings for communal prayer, scripture reflection, and Eucharistic adoration.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:7">
-                <div class="act-icon">🌍</div>
-                <h3>Community Outreach</h3>
-                <p>Bridging the Church with the wider world through mission and compassionate service.</p>
+                <div class="act-icon">🏐</div>
+                <h3>Serve & Smash</h3>
+                <p>Promotes youth interaction and physical health by hosting events, including the diocesan "Serve & Smash" volleyball tournament.</p>
             </div>
         </div>
     </div>
@@ -301,72 +601,13 @@
             </div>
             <div class="big-stat-divider reveal-fade"></div>
             <div class="big-stat reveal-scale">
-                <span class="big-num" data-target="10000" data-suffix="+">0</span>
-                <span class="big-label">Active Communities</span>
+                <span class="big-num" data-target="148" data-suffix="">0</span>
+                <span class="big-label">Parishes</span>
             </div>
             <div class="big-stat-divider reveal-fade"></div>
             <div class="big-stat reveal-scale">
                 <span class="big-num" data-target="13">0</span>
                 <span class="big-label">Foranes</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-  SECTION 6: TIMELINE
-══════════════════════════════════════════ -->
-<section class="section timeline-section" id="timeline">
-    <div class="container">
-        <div class="section-label reveal-fade">Our Journey</div>
-        <h2 class="section-title reveal-up">A Legacy of <em>Faith</em></h2>
-
-        <div class="timeline">
-            <div class="timeline-line"></div>
-
-            <div class="tl-item tl-left reveal-fade">
-                <div class="tl-card glass" data-tilt>
-                    <span class="tl-year">1971</span>
-                    <h3>Formation</h3>
-                    <p>SMYM is officially founded as the youth wing of the Syro Malabar Church, beginning its mission of faith formation and youth development.</p>
-                </div>
-                <div class="tl-dot"></div>
-            </div>
-
-            <div class="tl-item tl-right reveal-fade">
-                <div class="tl-dot"></div>
-                <div class="tl-card glass" data-tilt>
-                    <span class="tl-year">1985</span>
-                    <h3>Diocesan Expansion</h3>
-                    <p>SMYM expands to all dioceses of the Syro Malabar Church, establishing a structured network of units, zones, and diocesan councils.</p>
-                </div>
-            </div>
-
-            <div class="tl-item tl-left reveal-fade">
-                <div class="tl-card glass" data-tilt>
-                    <span class="tl-year">2000</span>
-                    <h3>Global Presence</h3>
-                    <p>With the Syro Malabar diaspora growing worldwide, SMYM chapters begin forming globally — in Europe, North America, and the Gulf.</p>
-                </div>
-                <div class="tl-dot"></div>
-            </div>
-
-            <div class="tl-item tl-right reveal-fade">
-                <div class="tl-dot"></div>
-                <div class="tl-card glass" data-tilt>
-                    <span class="tl-year">2010</span>
-                    <h3>Social Impact</h3>
-                    <p>Launch of flagship social initiatives including anti-drug campus campaigns, de-addiction clubs, and leadership formation programs nationwide.</p>
-                </div>
-            </div>
-
-            <div class="tl-item tl-left reveal-fade">
-                <div class="tl-card glass" data-tilt>
-                    <span class="tl-year">Today</span>
-                    <h3>Present Mission</h3>
-                    <p>SMYM stands as one of the world's largest Catholic youth movements with over 1.6 million members, continuing to transform lives through faith, fellowship, and formation.</p>
-                </div>
-                <div class="tl-dot tl-dot-active"></div>
             </div>
         </div>
     </div>
@@ -427,8 +668,8 @@
                 </div>
                 <div class="event-info">
                     <span class="event-type gold-type">Sports</span>
-                    <h3>Sports Day & Tournament</h3>
-                    <p>Annual diocesan sports meet fostering brotherhood, sportsmanship, and camaraderie.</p>
+                    <h3>Serve & Smash Volleyball</h3>
+                    <p>Diocesan volleyball tournament promoting interaction, sportsmanship, and physical health among parish units.</p>
                 </div>
                 <div class="event-arrow">→</div>
             </div>
@@ -464,54 +705,6 @@
     </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-  SECTION 9: TESTIMONIALS
-══════════════════════════════════════════ -->
-<section class="section testimonials-section" id="testimonials">
-    <div class="container">
-        <div class="section-label reveal-fade">Voices</div>
-        <h2 class="section-title reveal-up">From Our <em>Community</em></h2>
-
-        <div class="testimonials-carousel">
-            <div class="testi-track" id="testi-track">
-                <div class="testi-card glass">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="testi-quote">"SMYM is a powerhouse of grace in our diocese. Watching our youth grow in faith, leadership, and service to the Church and society is the greatest joy of my ministry."</p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">FT</div>
-                        <div><strong>Fr. Thomas</strong><span>Director, Diocese of Kanjirappally</span></div>
-                    </div>
-                </div>
-                <div class="testi-card glass">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="testi-quote">"Leading SMYM Kanjirappally has shown me the power of youth unity. Through our camps, campus ministry, and social outreach, we are building a vibrant, Christ-centered generation."</p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">JM</div>
-                        <div><strong>Jomon</strong><span>Diocese President, Kanjirappally</span></div>
-                    </div>
-                </div>
-                <div class="testi-card glass">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="testi-quote">"Capturing the vibrant energy of SMYM through media is an inspiring journey. We are sharing our faith, fellowship, and mission with the world, creating a digital space of hope."</p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">RL</div>
-                        <div><strong>Romal</strong><span>Media Coordinator, Kanjirappally</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testi-controls">
-                <button class="testi-btn" id="testi-prev" aria-label="Previous">&#8592;</button>
-                <div class="testi-dots" id="testi-dots">
-                    <span class="testi-dot active"></span>
-                    <span class="testi-dot"></span>
-                    <span class="testi-dot"></span>
-                </div>
-                <button class="testi-btn" id="testi-next" aria-label="Next">&#8594;</button>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ══════════════════════════════════════════
   SECTION 10: CALL TO ACTION
@@ -521,7 +714,6 @@
     <div class="cta-glow-2"></div>
     <div class="container">
         <div class="cta-inner reveal-up">
-            <div class="cta-cross">✝</div>
             <h2 class="cta-title">Join the <em>Mission</em></h2>
             <p class="cta-sub">Become the Light of Christ</p>
             <p class="cta-body">Thousands of young Catholics have found purpose, community, and a deeper faith through SMYM. Your story begins here.</p>
@@ -530,22 +722,77 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
+
+        <!-- Social Media Cards moved here -->
+        <div class="social-connect reveal-up">
+            <div class="section-label" style="color:rgba(212,175,55,0.7); margin-bottom:0.75rem;">Connect With Us</div>
+            <h3 class="social-connect-title">Find Us on Social Media</h3>
+            <div class="social-cards-grid">
+
+                <!-- Instagram Card -->
+                <div class="social-card" data-brand="instagram" id="social-instagram">
+                    <div class="social-card-inner">
+                        <div class="social-card-glow"></div>
+                        <div class="social-card-sweep"></div>
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </div>
+                        <div class="social-card-label">Instagram</div>
+                        <div class="social-card-handle">@smymkanjirappally</div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="social-card" data-brand="whatsapp" id="social-whatsapp">
+                    <div class="social-card-inner">
+                        <div class="social-card-glow"></div>
+                        <div class="social-card-sweep"></div>
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                <path d="M11.99 2C6.465 2 2 6.467 2 11.994c0 2.184.706 4.211 1.902 5.862L2.46 21.5l3.726-1.418A9.944 9.944 0 0 0 11.99 22c5.523 0 9.99-4.467 9.99-9.99C21.98 6.468 17.514 2 11.99 2z"/>
+                            </svg>
+                        </div>
+                        <div class="social-card-label">WhatsApp</div>
+                        <div class="social-card-handle">Join Our Community</div>
+                    </div>
+                </div>
+
+                <!-- Facebook Card -->
+                <div class="social-card" data-brand="facebook" id="social-facebook">
+                    <div class="social-card-inner">
+                        <div class="social-card-glow"></div>
+                        <div class="social-card-sweep"></div>
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </div>
+                        <div class="social-card-label">Facebook</div>
+                        <div class="social-card-handle">SMYM Kanjirappally</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-  SECTION 11: FOOTER
-══════════════════════════════════════════ -->
 <footer class="footer" id="contact">
     <div class="footer-glass">
         <div class="footer-watermark">SMYM</div>
         <div class="container">
+
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="footer-logo-media">
-                        <video class="footer-vid" muted playsinline loop autoplay>
-                            <source src="logo/logo-loop.mp4" type="video/mp4">
-                        </video>
+                    <!-- PNG Logo with floating animation -->
+                    <div class="footer-logo-wrap">
+                        <img src="logo/logo.png" alt="SMYM Logo" class="footer-logo-img" id="footer-logo-img">
                     </div>
                     <h3>SMYM Kanjirappally</h3>
                     <p class="footer-tagline-script">Yuvadeepthi</p>
@@ -557,7 +804,7 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#about">About SMYM</a></li>
-                        <li><a href="#mission">Mission & Vision</a></li>
+                        <li><a href="#mission">Mission &amp; Vision</a></li>
                         <li><a href="#activities">Activities</a></li>
                         <li><a href="#stats">Our Impact</a></li>
                         <li><a href="#timeline">History</a></li>
@@ -578,39 +825,23 @@
                 <div class="footer-col footer-contact">
                     <h4>Connect</h4>
                     <p>Stay connected with SMYM Kanjirappally for the latest events, news, and spiritual reflections.</p>
-                    <div class="social-row">
-                        <a href="#" class="social-btn" title="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                        </a>
-                        <a href="#" class="social-btn" title="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-                        </a>
-                        <a href="#" class="social-btn" title="YouTube">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
-                        </a>
-                        <a href="#" class="social-btn" title="WhatsApp">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 2C6.465 2 2 6.467 2 11.994c0 2.184.706 4.211 1.902 5.862L2.46 21.5l3.726-1.418A9.944 9.944 0 0 0 11.99 22c5.523 0 9.99-4.467 9.99-9.99C21.98 6.468 17.514 2 11.99 2z"/></svg>
-                        </a>
-                    </div>
                     <a href="mailto:smym@kanjirappally.in" class="footer-email">smym@kanjirappally.in</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>© 2025 SMYM Diocese of Kanjirappally — Yuvadeepthi. All rights reserved.</p>
-                <p>Built with <span class="crimson">Faith &amp; Purpose</span> ✝</p>
+                <p>Built with <span class="crimson">Faith &amp; Purpose</span></p>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Scripts: Three.js and GSAP first, then our modules -->
-<script src="js/three.min.js"></script>
+<!-- Scripts: GSAP first, then our modules -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="js/video-controller.js"></script>
 <script src="js/particles.js"></script>
-<script src="js/three-scene.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

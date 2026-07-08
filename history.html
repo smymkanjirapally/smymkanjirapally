@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History — SMYM Kanjirappally</title>
+    <meta name="description" content="Explore the historical journey of Yuvaddepthy - KCYM and SMYM Kanjirappally from 1978 to the present day under the Syro-Malabar Catholic Diocese of Kanjirapally.">
+    <link rel="icon" type="image/png" href="logo/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Poppins:wght@300;400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ══════════════════════════════════════════
+           COLORS & DESIGN VARIABLES (Light luxury theme)
+           ══════════════════════════════════════════ */
+        :root {
+            --bg-color: #FFFFFF;
+            --primary: #8B0000;
+            --gold: #D4AF37;
+            --black: #111111;
+            --light-gray: #F7F7F7;
+            --text-gray: #666666;
+            --glass-card: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(212, 175, 55, 0.2);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--black);
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: none;
+        }
+
+        a, button {
+            cursor: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Custom premium cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s;
+        }
+        .cursor-ring {
+            width: 35px;
+            height: 35px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9998;
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
+        }
+        body:hover .cursor-dot {
+            opacity: 1;
+        }
+        body.cursor-hovering .cursor-ring {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* Particle Background */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ══════════════════════════════════════════
+           NAVIGATION
+           ══════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .nav.scrolled {
+            height: 70px;
+            background: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo-media {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .nav-logo:hover .nav-logo-media {
+            transform: scale(1.05);
+        }
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .nav-logo-text {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.45rem;
+            line-height: 1;
+        }
+        .nav-brand {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-sub {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            letter-spacing: 0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+        }
+        .nav-links a {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--black);
+            transition: var(--transition);
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+        .btn-nav {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #ffffff;
+            background: var(--primary);
+            padding: 8px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--primary);
+            transition: var(--transition);
+        }
+        .btn-nav:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--black);
+            transition: var(--transition);
+        }
+        @media (max-width: 900px) {
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            padding: 100px 2rem 2rem;
+            border-bottom: 2px solid var(--gold);
+            z-index: 999;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        .mobile-menu.open {
+            top: 0;
+        }
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .mobile-menu a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION DESIGN SCHEME
+           ══════════════════════════════════════════ */
+        .section-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        /* ══════════════════════════════════════════
+           HERO SECTION
+           ══════════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(255, 255, 255, 0) 70%), linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+            position: relative;
+            padding-top: 100px;
+        }
+        /* Thin geometric lines */
+        .hero-lines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hero-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+            height: 1px;
+            width: 100%;
+        }
+        .hero-line-1 { top: 25%; left: 0; transform: rotate(-5deg); }
+        .hero-line-2 { bottom: 30%; left: 0; transform: rotate(5deg); }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--black);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .hero-title span {
+            color: var(--primary);
+        }
+        .hero-subtitle {
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        .hero-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            padding: 15px 40px;
+            background-color: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.15);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hero-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-gray);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION 1: INTRODUCTION (Two-Column)
+           ══════════════════════════════════════════ */
+        .intro {
+            padding: 8rem 0;
+            background: #ffffff;
+        }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        .intro-text p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .intro-text p strong {
+            color: var(--black);
+        }
+        .quote-card {
+            background: var(--light-gray);
+            border-left: 4px solid var(--gold);
+            padding: 2rem;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .quote-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .quote-card p {
+            font-family: 'Raleway', sans-serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        .quote-author {
+            display: block;
+            margin-top: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION 2: TIMELINE (Evolution)
+           ══════════════════════════════════════════ */
+        .timeline-section {
+            padding: 8rem 0;
+            background-color: var(--light-gray);
+            position: relative;
+        }
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        /* Vertical Gold Timeline Line */
+        .timeline-spine {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-spine {
+                left: 30px;
+            }
+        }
+        .timeline-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        .timeline-entry:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-entry.left {
+            flex-direction: row-reverse;
+        }
+        @media (max-width: 768px) {
+            .timeline-entry {
+                flex-direction: row !important;
+                justify-content: flex-start;
+                padding-left: 60px;
+            }
+        }
+        /* Spine dot indicator */
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            background: var(--bg-color);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            transition: var(--transition);
+        }
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .timeline-entry:hover .timeline-dot::after {
+            opacity: 1;
+        }
+        .timeline-entry:hover .timeline-dot {
+            transform: translate(-50%, -50%) scale(1.3);
+            box-shadow: 0 0 15px var(--gold);
+        }
+        @media (max-width: 768px) {
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+        /* timeline content card */
+        .timeline-card {
+            width: 45%;
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .timeline-card {
+                width: 100%;
+            }
+        }
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+        }
+        .timeline-year {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 2px;
+        }
+        .timeline-card h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        .timeline-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+        .timeline-card ul {
+            list-style: none;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .timeline-card li {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 15px;
+        }
+        .timeline-card li::before {
+            content: '•';
+            color: var(--gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION 3: VISION & MISSION
+           ══════════════════════════════════════════ */
+        .vision-mission {
+            padding: 8rem 0;
+            background-color: var(--bg-color);
+        }
+        .vision-statement {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #FFFFFF 100%);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+        }
+        .vision-statement:hover {
+            box-shadow: 0 15px 50px rgba(139, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+        .vision-statement h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .vision-statement p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--black);
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .mission-card {
+            background: var(--light-gray);
+            border: 1px solid transparent;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .mission-card:hover {
+            transform: translateY(-8px);
+            background: #ffffff;
+            border-color: var(--gold);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.12);
+        }
+        .mission-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+        .mission-card:hover .mission-icon {
+            transform: scale(1.15);
+        }
+        .mission-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+        }
+        .mission-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION 4: ORGANIZATIONAL STRUCTURE
+           ══════════════════════════════════════════ */
+        .org {
+            padding: 8rem 0;
+            background-color: var(--light-gray);
+        }
+        .org-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .org-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        .org-description p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .org-badge {
+            background: rgba(139, 0, 0, 0.05);
+            border-left: 3px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin-top: 2rem;
+        }
+        .org-badge h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .org-badge p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        /* Hierarchy flow visualization */
+        .hierarchy-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+        }
+        .flow-node {
+            background: #ffffff;
+            border: 1px solid var(--glass-border);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            min-width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+        .flow-node.state {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.15);
+        }
+        .flow-node.diocesan-smym {
+            border: 2px solid var(--gold);
+            background: #ffffff;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.1);
+        }
+        .flow-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        }
+        .flow-node.state:hover {
+            box-shadow: 0 12px 30px rgba(139, 0, 0, 0.25);
+        }
+        .flow-node h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .flow-node p {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        .flow-connector {
+            width: 2px;
+            height: 30px;
+            background-color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+        .flow-connector::after {
+            content: '↓';
+            color: var(--gold);
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION 5: LEGACY STATISTICS
+           ══════════════════════════════════════════ */
+        .stats {
+            padding: 6rem 0;
+            background-color: var(--bg-color);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+        .stat-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .stat-card p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION 6: OUR JOURNEY CONTINUES
+           ══════════════════════════════════════════ */
+        .cta {
+            padding: 8rem 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Gold decorative cross lines */
+        .cta-cross-lines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .cta-line-h {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.25), transparent);
+        }
+        .cta-line-v {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            bottom: 20%;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.25), transparent);
+        }
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta-content h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+        .cta-content h2 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        .cta-content p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+        }
+        .cta-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            padding: 16px 45px;
+            background-color: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.15);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        }
+
+        /* ══════════════════════════════════════════
+           FOOTER
+           ══════════════════════════════════════════ */
+        .footer {
+            background-color: var(--black);
+            color: #ffffff;
+            padding: 5rem 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        .footer-brand h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+        }
+        .footer-links-col h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            border-left: 2px solid var(--gold);
+            padding-left: 10px;
+        }
+        .footer-links-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .footer-links-col a {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            transition: var(--transition);
+        }
+        .footer-links-col a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: #777777;
+        }
+        .footer-bottom strong {
+            color: var(--gold);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            border: 1px solid var(--primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            transition: var(--transition);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ══════════════════════════════════════════
+           ANIMATION REVEAL ENGINE
+           ══════════════════════════════════════════ */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-fade {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .revealed {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Premium Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ══════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner container">
+            <a class="nav-logo" href="index.html#hero">
+                <div class="nav-logo-media">
+                    <img src="logo/logo.png" alt="SMYM Logo">
+                </div>
+                <div class="nav-logo-text">
+                    <span class="nav-brand">SMYM</span>
+                    <span class="nav-sub">Kanjirappally</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#timeline" class="active">History</a></li>
+                <li><a href="index.html#executives">Executives</a></li>
+                <li><a href="index.html#activities">Activities</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <a href="index.html#join" class="btn-nav">Join</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#timeline">History</a></li>
+            <li><a href="index.html#executives">Executives</a></li>
+            <li><a href="index.html#activities">Activities</a></li>
+            <li><a href="index.html#events">Events</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#join" class="btn-nav" style="color:#ffffff; margin-top: 1rem;">Join</a></li>
+        </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-lines">
+            <div class="hero-line hero-line-1"></div>
+            <div class="hero-line hero-line-2"></div>
+        </div>
+        <div class="container">
+            <span class="section-label reveal-fade">SMYM Kanjirappally Chronicle</span>
+            <h1 class="hero-title reveal-up">Our Journey Through<br><span>Faith &amp; Service</span></h1>
+            <p class="hero-subtitle reveal-up" data-delay="1">From KCYM's historic beginning to the vibrant journey of SMYM Kanjirappally.</p>
+            <a href="#intro" class="hero-btn reveal-up" data-delay="2">
+                <span>Explore Timeline</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 1: INTRODUCTION
+       ══════════════════════════════════════════ -->
+    <section class="intro" id="intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-heading reveal-left">
+                    <span class="section-label">Background</span>
+                    <h2 class="section-title">A Legacy That<br><em>Continues</em></h2>
+                    <div class="quote-card">
+                        <p>"Organizing youth is about coordinating human potentials on Gospel values to make them effective agents of change."</p>
+                        <span class="quote-author">KCYM Vision</span>
+                    </div>
+                </div>
+                <div class="intro-text reveal-right">
+                    <p>The history of organized Catholic youth activities in Kerala is a legacy of spiritual depth, active leadership, and societal transformation. In the late 1960s, dioceses across Kerala felt the urge to organize Catholic youth to channel their youthfulness for the betterment of the Church and society.</p>
+                    <p>This path was profoundly shaped by the vision inspired by the <strong>Second Vatican Council</strong> and <strong>Pope Paul VI's</strong> call to empower young people to be active participants in the mission of the Church.</p>
+                    <p>Over decades, this movement nurtured <strong>youth leadership</strong>, instilled a deep sense of <strong>faith</strong>, drove impactful <strong>community service</strong>, enabled modern <strong>evangelization</strong>, and built strong commitment toward <strong>social responsibility</strong> across generations of young believers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 2: EVOLUTION TIMELINE
+       ══════════════════════════════════════════ -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;" class="reveal-up">
+                <span class="section-label">The Journey</span>
+                <h2 class="section-title" style="margin-bottom: 1rem;">Historical <em>Timeline</em></h2>
+                <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Trace the major milestones and structural evolution of the movement.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-spine"></div>
+
+                <!-- 1968 -->
+                <div class="timeline-entry left reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1968</span>
+                        <h3>Grassroots Mobilization</h3>
+                        <p>Dioceses in Kerala begin organizing Catholic youth movements following the post-Vatican II call to action. These initial diocesan setups served as the seedbeds for a united state-level movement.</p>
+                    </div>
+                </div>
+
+                <!-- 1973 -->
+                <div class="timeline-entry right reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1973</span>
+                        <h3>KCBC Youth Commission</h3>
+                        <p>The Kerala Catholic Bishops' Council (KCBC) establishes the Youth Commission, creating the official bridge to coordinate and integrate the youth ministries across different dioceses in Kerala.</p>
+                    </div>
+                </div>
+
+                <!-- 1978 -->
+                <div class="timeline-entry left reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1978</span>
+                        <h3>Yuvaddepthy - KCYM Roots</h3>
+                        <p>The youth movement originally functioned under the name <strong>Yuvaddepthy - KCYM</strong> (Kerala Catholic Youth Movement), active in the Diocese of Kanjirapally since 1978 to guide and inspire local Catholic youth.</p>
+                    </div>
+                </div>
+
+                <!-- 1986 -->
+                <div class="timeline-entry right reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1986</span>
+                        <h3>World Peace Year Rallies</h3>
+                        <p>To promote peace and social harmony during the World Peace Year, KCYM organises four major state-wide peace rallies, proudly starting from <strong>Kanjirapally</strong> and moving through Kollam, Kodungalloor, and Thrissur.</p>
+                    </div>
+                </div>
+
+                <!-- 2011 -->
+                <div class="timeline-entry left reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2011</span>
+                        <h3>Global Transition Initiatives</h3>
+                        <p>Following initiatives by the Syro-Malabar Laity Commission to unify global youth ministries, groundwork begins for a single global structure.</p>
+                    </div>
+                </div>
+
+                <!-- 2014 -->
+                <div class="timeline-entry right reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2014</span>
+                        <h3>Launch of SMYM</h3>
+                        <p>The official, unified <strong>Syro-Malabar Youth Movement (SMYM)</strong> structure is officially launched on August 30, 2014, with approval from the Synod of Bishops.</p>
+                    </div>
+                </div>
+
+                <!-- Present Day -->
+                <div class="timeline-entry left reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">Present Day</span>
+                        <h3>Empowering the Future</h3>
+                        <p>SMYM Kanjirappally actively serves young people across 148 parishes and 13 Foranes in Kottayam, Idukki, and Pathanamthitta districts, leading activities like anti-drug workshops, de-addiction hubs, and humanitarian flood relief.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 3: VISION & MISSION
+       ══════════════════════════════════════════ -->
+    <section class="vision-mission" id="vision-mission">
+        <div class="container">
+            <div class="vision-statement reveal-scale">
+                <h3>The Vision Statement</h3>
+                <p>"The Integral Development of the Catholic Youth and the Total Liberation of Human Society in accordance with the Christian values."</p>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 3.5rem;" class="reveal-up">
+                <span class="section-label">Pillars</span>
+                <h2 class="section-title" style="margin-bottom: 0;">Our Core <em>Mission</em></h2>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">✝️</span>
+                    <h4>Faith Formation</h4>
+                    <p>Deepening spiritual values and Christian roots in young hearts.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">🤝</span>
+                    <h4>Evangelization</h4>
+                    <p>Proclaiming Christ through living witness and active charity.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">🎓</span>
+                    <h4>Leadership</h4>
+                    <p>Nurturing young leaders to guide both the Church and society.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">🌟</span>
+                    <h4>Youth Empowerment</h4>
+                    <p>Empowering potentials to trigger structural and cultural reforms.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">🌱</span>
+                    <h4>Service</h4>
+                    <p>Reaching out to the least, last, and lost in the community.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">⚖️</span>
+                    <h4>Social Justice</h4>
+                    <p>Promoting truth, equality, and righteousness in the public sphere.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">🎨</span>
+                    <h4>Culture</h4>
+                    <p>Formulating a liberative culture that protects human dignity.</p>
+                </div>
+                <div class="mission-card reveal-up">
+                    <span class="mission-icon">🇮🇳</span>
+                    <h4>National Integration</h4>
+                    <p>Fostering unity and harmony across castes, creeds, and beliefs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 4: ORGANIZATIONAL STRUCTURE
+       ══════════════════════════════════════════ -->
+    <section class="org" id="org">
+        <div class="container">
+            <div class="org-grid">
+                <div class="org-description reveal-left">
+                    <span class="section-label">Structure</span>
+                    <h2 class="section-title">Federation &amp;<br><em>Hierarchy</em></h2>
+                    <p>KCYM operates as a democratic federation of over 30 dioceses of Kerala, where each diocese has equal rights in the senate. Membership is open to youth between the age of 15 and 35 who commit to Catholic values.</p>
+                    <p>The structure originates at the parish level under the patronage of the local bishop, flowing to the top through representative democratic processes.</p>
+                    <div class="org-badge">
+                        <h4>Historical Distinction</h4>
+                        <p>KCYM is the official state-level federation under the KCBC Youth Commission. SMYM is the youth movement of the Syro-Malabar Church. SMYM Kanjirappally operates as the diocesan youth ministry within this shared structure.</p>
+                    </div>
+                </div>
+
+                <div class="hierarchy-flow reveal-right">
+                    <div class="flow-node state">
+                        <h5>KCYM State Senate</h5>
+                        <p>Senate &amp; Syndicate Federation</p>
+                    </div>
+                    <div class="flow-connector"></div>
+                    <div class="flow-node diocesan-smym">
+                        <h5>SMYM Kanjirappally</h5>
+                        <p>Diocesan Level under local Bishop</p>
+                    </div>
+                    <div class="flow-connector"></div>
+                    <div class="flow-node">
+                        <h5>Forane Council</h5>
+                        <p>Forane Representative Body</p>
+                    </div>
+                    <div class="flow-connector"></div>
+                    <div class="flow-node">
+                        <h5>Parish Unit</h5>
+                        <p>Parish Executive Council</p>
+                    </div>
+                    <div class="flow-connector"></div>
+                    <div class="flow-node" style="opacity: 0.85; transform: scale(0.95);">
+                        <h5>Youth Members</h5>
+                        <p>Catholic Youth (Ages 15-35)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 5: LEGACY STATISTICS
+       ══════════════════════════════════════════ -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-counter" data-target="1600000" data-suffix="+">0</h3>
+                    <p>Global Members</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-counter" data-target="148">0</h3>
+                    <p>Parishes</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-counter" data-target="13">0</h3>
+                    <p>Foranes</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-counter" data-target="3">0</h3>
+                    <p>Districts Spread</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-counter" data-target="45" data-suffix="+">0</h3>
+                    <p>Years of Legacy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       SECTION 6: OUR JOURNEY CONTINUES (CTA)
+       ══════════════════════════════════════════ -->
+    <section class="cta" id="cta">
+        <div class="cta-cross-lines">
+            <div class="cta-line-h"></div>
+            <div class="cta-line-v"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content reveal-scale">
+                <h2>Every generation writes a <em>new chapter</em>.<br>Our history inspires our <em>future</em>.</h2>
+                <p>Be part of the movement that is defining Catholic youth leadership in Kanjirappally.</p>
+                <a href="index.html#join" class="cta-btn">
+                    <span>Join Our Mission</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>SMYM Kanjirappally</h3>
+                    <p>Official Youth Movement of the Diocese of Kanjirappally, under the Syro-Malabar Youth Movement Synod and Kerala Catholic Youth Movement federation.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                        <a href="#" class="social-link" aria-label="YouTube">YT</a>
+                        <a href="#" class="social-link" aria-label="Twitter">TW</a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Direct Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About SMYM</a></li>
+                        <li><a href="#timeline">Timeline History</a></li>
+                        <li><a href="index.html#executives">Leadership</a></li>
+                        <li><a href="index.html#activities">Our Activities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>References</h4>
+                    <ul>
+                        <li><a href="#">KCYM State Office</a></li>
+                        <li><a href="#">KCBC Commission</a></li>
+                        <li><a href="#">Syro-Malabar Church</a></li>
+                        <li><a href="#">Diocese of Kanjirappally</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 SMYM Kanjirappally. All rights reserved.</p>
+                <p>Preserving values with <strong>Faith, Fellowship &amp; Formation</strong>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+        <span>↑</span>
+    </button>
+
+    <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+       ══════════════════════════════════════════ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* ─── Premium Custom Cursor ─── */
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorRing = document.getElementById('cursor-ring');
+            let mouseX = 0, mouseY = 0;
+            let ringX = 0, ringY = 0;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            }, { passive: true });
+
+            function easeCursor() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+                requestAnimationFrame(easeCursor);
+            }
+            easeCursor();
+
+            // Hover state logic
+            const hoverTargets = 'a, button, .timeline-card, .mission-card, .flow-node';
+            document.querySelectorAll(hoverTargets).forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hovering'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hovering'));
+            });
+
+            /* ─── Scroll-based Nav Bar Background ─── */
+            const nav = document.getElementById('nav');
+            const backToTop = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.scrollY;
+                nav.classList.toggle('scrolled', currentScroll > 50);
+                backToTop.classList.toggle('show', currentScroll > 400);
+            }, { passive: true });
+
+            /* ─── Mobile Menu Toggle ─── */
+            const navToggle = document.getElementById('nav-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (navToggle && mobileMenu) {
+                navToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    navToggle.classList.toggle('active');
+                });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        navToggle.classList.remove('active');
+                    });
+                });
+            }
+
+            /* ─── Back To Top Button Handler ─── */
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            /* ─── Floating Particles Canvas ─── */
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            let particles = [];
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }, { passive: true });
+
+            class GoldParticle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.4;
+                    this.speedY = (Math.random() - 0.5) * 0.4;
+                    this.alpha = Math.random() * 0.5 + 0.1;
+                    this.fadeSpeed = Math.random() * 0.005 + 0.002;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    this.alpha -= this.fadeSpeed;
+                    
+                    if (this.alpha <= 0 || this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                        this.reset();
+                    }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = '#D4AF37';
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            // Create initial particles
+            const particleCount = 60;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new GoldParticle());
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+
+            /* ─── Scroll Reveal Engine ─── */
+            const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            /* ─── Counter Animator ─── */
+            const statCounters = document.querySelectorAll('.stat-counter');
+            
+            const countObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.target, 10);
+                        const suffix = el.dataset.suffix || '';
+                        const dur = 2000; // 2 seconds
+                        const start = performance.now();
+                        
+                        function easeOutExpo(t) {
+                            return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+                        }
+                        
+                        function tick(now) {
+                            const prog = Math.min((now - start) / dur, 1);
+                            const value = Math.round(easeOutExpo(prog) * target);
+                            
+                            if (value >= 1000000) {
+                                el.textContent = (value / 1000000).toFixed(1) + 'M' + suffix;
+                            } else if (value >= 1000) {
+                                el.textContent = (value / 1000).toFixed(0) + 'K' + suffix;
+                            } else {
+                                el.textContent = value + suffix;
+                            }
+                            
+                            if (prog < 1) requestAnimationFrame(tick);
+                        }
+                        requestAnimationFrame(tick);
+                        countObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statCounters.forEach(counter => countObserver.observe(counter));
+        });
+    </script>
+</body>
+</html>

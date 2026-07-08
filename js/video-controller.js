@@ -1,41 +1,17 @@
 /* ═══════════════════════════════════════════════════════
    VIDEO-CONTROLLER.JS
-   Handles intro → loop seamless transition for all
-   logo videos on the page.
+   Ensures the hero logo video plays (autoplay fallback).
+   The video loops continuously on the dark hero background.
    ═══════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const heroLogo = document.getElementById('hero-logo');
 
-    /* ── Hero logo ── */
-    setupTransition('hero-intro', 'hero-loop');
-
-    /* ── Nav logo ── */
-    setupTransition('nav-intro', 'nav-loop');
-
-    function setupTransition(introId, loopId) {
-        const intro = document.getElementById(introId);
-        const loop  = document.getElementById(loopId);
-        if (!intro || !loop) return;
-
-        // Preload loop video
-        loop.load();
-
-        // Auto-play intro
-        const p = intro.play();
-        if (p !== undefined) {
-            p.catch(() => {
-                // Autoplay blocked — silently switch to loop
-                intro.classList.remove('active');
-                loop.classList.add('active');
-                loop.play().catch(() => {});
-            });
-        }
-
-        // On intro end → crossfade to loop
-        intro.addEventListener('ended', () => {
-            intro.classList.remove('active');
-            loop.classList.add('active');
-            loop.play().catch(() => {});
+    if (heroLogo) {
+        // Ensure play is called programmatically (fallback for blocked autoplay)
+        heroLogo.play().catch(() => {
+            // Fallback: ensure opacity is shown even if autoplay blocked
+            heroLogo.classList.add('active');
         });
     }
 });
