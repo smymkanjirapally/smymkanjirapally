@@ -9,6 +9,9 @@
     <!-- Tab Favicon -->
     <link rel="icon" type="image/png" href="logo/logo.png">
 
+    <!-- Preload Video for High-Performance instant rendering -->
+    <link rel="preload" href="logo/logo.mp4" as="video" type="video/mp4">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +22,50 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- ══════════════════════════════════════════
+  CINEMATIC LOADER
+══════════════════════════════════════════ -->
+<div id="cinema-loader" class="cinema-loader">
+    <canvas id="loader-canvas"></canvas>
+    <div class="loader-content">
+        <!-- Logo Container with glows, sweeps, and outlines -->
+        <div class="loader-logo-container">
+            <div class="loader-logo-outline"></div>
+            <div class="loader-logo-glow"></div>
+            <img src="logo/logo.png" alt="SMYM Logo" class="loader-logo-img">
+            <div class="loader-logo-sweep"></div>
+        </div>
+        
+        <!-- Branding Text -->
+        <div class="loader-branding">
+            <h1 class="loader-brand-title">SMYM KANJIRAPALLY DIOCESE</h1>
+            <p class="loader-brand-sub">Syro Malabar Youth Movement</p>
+        </div>
+        
+        <!-- Celestial Circular Arc Loader -->
+        <div class="celestial-loader">
+            <div class="arc arc-1"></div>
+            <div class="arc arc-2"></div>
+            <div class="arc arc-3"></div>
+            <div class="celestial-center">
+                <span class="celestial-text">Loading<span class="dots">...</span></span>
+                <span class="celestial-percent" id="loader-percent">0%</span>
+            </div>
+        </div>
+        
+        <!-- Dynamic Loading Message -->
+        <div class="loader-message" id="loader-message">Preparing Experience...</div>
+        
+        <!-- Premium Progress Bar -->
+        <div class="loader-progress-container">
+            <div class="loader-progress-bar">
+                <div class="loader-progress-fill" id="loader-progress-fill"></div>
+                <div class="loader-progress-shimmer"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ══════════════════════════════════════════
   CUSTOM CURSOR
@@ -126,7 +173,7 @@
         <div class="logo-ripple-wave ripple-1"></div>
         <div class="logo-ripple-wave ripple-2"></div>
 
-        <video id="hero-logo" class="hero-logo-vid" muted playsinline autoplay loop>
+        <video id="hero-logo" class="hero-logo-vid" muted playsinline autoplay loop preload="auto">
             <source src="logo/logo.mp4" type="video/mp4">
         </video>
         <!-- Sparkle Particles -->
@@ -542,42 +589,58 @@
 
         <div class="activities-grid">
             <div class="act-card glass reveal-fade" data-tilt style="--i:0">
-                <div class="act-icon">🎓</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                </div>
                 <h3>Campus Ministry</h3>
                 <p>Faith-based outreach, Bible study, and Catholic identity formation on college campuses.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:1">
-                <div class="act-icon">🚫</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
                 <h3>Anti-Abuse Workshops</h3>
                 <p>Runs institutional anti-substance abuse workshops on local campuses to empower youth.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:2">
-                <div class="act-icon">🌿</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
                 <h3>De-Addiction Hubs</h3>
                 <p>Sets up functional de-addiction hubs and safe peer support recovery circles.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:3">
-                <div class="act-icon">⛺</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L12 4l8 16H4z"/><path d="M12 4v16"/></svg>
+                </div>
                 <h3>Youth Camps</h3>
                 <p>Residential leadership and spiritual formation camps, including the flagship Camp Insight.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:4">
-                <div class="act-icon">🏆</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+                </div>
                 <h3>Leadership Training</h3>
                 <p>Structured programs to develop confident, Christ-centered leaders for Church and society.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:5">
-                <div class="act-icon">🤝</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
                 <h3>Humanitarian Relief</h3>
                 <p>Organizes direct community assistance during crises, raising relief funds and deploying food shipments (like bread and milk packs) to flood-affected communities like Chellanam.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:6">
-                <div class="act-icon">🙏</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 7h14"/></svg>
+                </div>
                 <h3>Prayer Meetings</h3>
                 <p>Regular gatherings for communal prayer, scripture reflection, and Eucharistic adoration.</p>
             </div>
             <div class="act-card glass reveal-fade" data-tilt style="--i:7">
-                <div class="act-icon">🏐</div>
+                <div class="act-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                </div>
                 <h3>Serve & Smash</h3>
                 <p>Promotes youth interaction and physical health by hosting events, including the diocesan "Serve & Smash" volleyball tournament.</p>
             </div>
@@ -735,7 +798,7 @@
             <div class="social-cards-grid">
 
                 <!-- Instagram Card -->
-                <div class="social-card" data-brand="instagram" id="social-instagram">
+                <a class="social-card" data-brand="instagram" id="social-instagram" href="https://www.instagram.com/smym_kanjirappally?igsh=ZXV6NDlydGZvaW8w" target="_blank" rel="noopener">
                     <div class="social-card-inner">
                         <div class="social-card-glow"></div>
                         <div class="social-card-sweep"></div>
@@ -749,10 +812,10 @@
                         <div class="social-card-label">Instagram</div>
                         <div class="social-card-handle">@smymkanjirappally</div>
                     </div>
-                </div>
+                </a>
 
                 <!-- WhatsApp Card -->
-                <div class="social-card" data-brand="whatsapp" id="social-whatsapp">
+                <a class="social-card" data-brand="whatsapp" id="social-whatsapp" href="https://whatsapp.com/channel/0029Vb7hrc08qIzzNh2ehj1h" target="_blank" rel="noopener">
                     <div class="social-card-inner">
                         <div class="social-card-glow"></div>
                         <div class="social-card-sweep"></div>
@@ -765,10 +828,10 @@
                         <div class="social-card-label">WhatsApp</div>
                         <div class="social-card-handle">Join Our Community</div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Facebook Card -->
-                <div class="social-card" data-brand="facebook" id="social-facebook">
+                <a class="social-card" data-brand="facebook" id="social-facebook" href="https://m.facebook.com/363283034151206/" target="_blank" rel="noopener">
                     <div class="social-card-inner">
                         <div class="social-card-glow"></div>
                         <div class="social-card-sweep"></div>
@@ -780,7 +843,7 @@
                         <div class="social-card-label">Facebook</div>
                         <div class="social-card-handle">SMYM Kanjirappally</div>
                     </div>
-                </div>
+                </a>
 
             </div>
         </div>
@@ -845,6 +908,7 @@
 <!-- Scripts: GSAP first, then our modules -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/loader.js"></script>
 <script src="js/video-controller.js"></script>
 <script src="js/particles.js"></script>
 <script src="js/script.js"></script>
