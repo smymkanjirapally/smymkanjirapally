@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided By — Leadership Showcase</title>
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts: Lato, Poppins, Raleway, Playfair Display (Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+    <!-- Scoped Showcase Styles -->
+    <link rel="stylesheet" href="css/guidedby.css">
+
+    <style>
+        /* Standalone body resets for previewing the section */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0000;
+            font-family: 'Raleway', 'Poppins', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Mock sections to demonstrate entry/exit transitions and page flow */
+        .mock-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #121212;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #c9a84c;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mock Section Above (e.g. About Section) -->
+    <div class="mock-section">
+        <span>About Section (Scroll Down)</span>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════
+      CINEMATIC SCROLL-DRIVEN LEADERSHIP SHOWCASE
+      600vh total height → 100vh sticky inner viewport.
+      Allows natural scrub pacing with GSAP ScrollTrigger.
+    ════════════════════════════════════════════════════════ -->
+    <section class="gls-outer" id="leadership-showcase">
+      <div class="gls-sticky">
+        
+        <!-- Scoped Deep Red Background + Vignette Layer -->
+        <div class="gls-bg" aria-hidden="true"></div>
+        
+        <!-- Premium Ambient Smoke Layers -->
+        <div class="gls-smoke" aria-hidden="true">
+            <div class="gls-smoke-extra"></div>
+        </div>
+
+        <!-- Section Title: Pinned above stage, fades in automatically -->
+        <header class="gls-header" aria-label="Section: Guided By">
+            <div class="gls-header-inner">
+                <span class="gls-header-rule" aria-hidden="true"></span>
+                <h2 class="gls-header-title">GUIDED BY</h2>
+                <span class="gls-header-rule" aria-hidden="true"></span>
+            </div>
+        </header>
+
+        <!-- Current / Total Leader Index Counter -->
+        <div class="gls-counter" id="gls-counter" aria-hidden="true">
+            <span class="gls-counter-current">01</span>&nbsp;/&nbsp;06
+        </div>
+
+        <!-- Primary Showcase Stage Container -->
+        <div class="gls-container">
+            
+            <!-- Leader 0 (Starts fully active - 1.png - Bishop Emeritus) -->
+            <div class="gls-leader" data-index="0">
+                <div class="gls-leader-inner">
+                    <div class="gls-left-media">
+                        <img src="assets/Head/1.png" alt="Mar Mathew Arackal" class="gls-portrait">
+                        <div class="gls-img-fade" aria-hidden="true"></div>
+                    </div>
+                    <div class="gls-right-content">
+                        <span class="gls-designation">Bishop Emeritus</span>
+                        <h3 class="gls-name">Mar Mathew Arackal</h3>
+                        <p class="gls-greeting">"Keep the flame of faith alive in your hearts, serving the Church and society with zeal and humility."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 1 (2.png - Bishop) -->
+            <div class="gls-leader" data-index="1">
+                <div class="gls-leader-inner">
+                    <div class="gls-left-media">
+                        <img src="assets/Head/2.png" alt="Mar Jose Pulickal" class="gls-portrait">
+                        <div class="gls-img-fade" aria-hidden="true"></div>
+                    </div>
+                    <div class="gls-right-content">
+                        <span class="gls-designation">Bishop</span>
+                        <h3 class="gls-name">Mar Jose Pulickal</h3>
+                        <p class="gls-greeting">"My dear children, let your faith be active in love, standing firm in hope as you lead the movement of Christ."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 2 (3.png - Protosyncellus) -->
+            <div class="gls-leader" data-index="2">
+                <div class="gls-leader-inner">
+                    <div class="gls-left-media">
+                        <img src="assets/Head/3.png" alt="V. Rev. Dr. Joseph Vellamattam" class="gls-portrait">
+                        <div class="gls-img-fade" aria-hidden="true"></div>
+                    </div>
+                    <div class="gls-right-content">
+                        <span class="gls-designation">Protosyncellus</span>
+                        <h3 class="gls-name">V. Rev. Dr. Joseph Vellamattam</h3>
+                        <p class="gls-greeting">"Nurturing the spiritual formation of the youth to become pillars of faith and beacons of light in society."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 3 (4.png - Syncellus) -->
+            <div class="gls-leader" data-index="3">
+                <div class="gls-leader-inner">
+                    <div class="gls-left-media">
+                        <img src="assets/Head/4.png" alt="V. Rev. Fr. Boby Alex Mannamplackal" class="gls-portrait">
+                        <div class="gls-img-fade" aria-hidden="true"></div>
+                    </div>
+                    <div class="gls-right-content">
+                        <span class="gls-designation">Syncellus</span>
+                        <h3 class="gls-name">V. Rev. Fr. Boby Alex Mannamplackal</h3>
+                        <p class="gls-greeting">"Encouraging a life of dedicated service, faithful discipleship, and unwavering commitment to the Gospel."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 4 (5.png - Syncellus) -->
+            <div class="gls-leader" data-index="4">
+                <div class="gls-leader-inner">
+                    <div class="gls-left-media">
+                        <img src="assets/Head/5.png" alt="V. Rev. Dr. Sebastian Kollamkunnel" class="gls-portrait">
+                        <div class="gls-img-fade" aria-hidden="true"></div>
+                    </div>
+                    <div class="gls-right-content">
+                        <span class="gls-designation">Syncellus</span>
+                        <h3 class="gls-name">V. Rev. Dr. Sebastian Kollamkunnel</h3>
+                        <p class="gls-greeting">"Inspiring young minds to embrace fellowship, build strong pastoral relationships, and active community participation."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 5 (6.png - Vice Chancellor) -->
+            <div class="gls-leader" data-index="5">
+                <div class="gls-leader-inner">
+                    <div class="gls-left-media">
+                        <img src="assets/Head/6.png" alt="V. Rev. Dr. Mathew Souriamkuzhi" class="gls-portrait">
+                        <div class="gls-img-fade" aria-hidden="true"></div>
+                    </div>
+                    <div class="gls-right-content">
+                        <span class="gls-designation">Vice Chancellor</span>
+                        <h3 class="gls-name">V. Rev. Dr. Mathew Souriamkuzhi</h3>
+                        <p class="gls-greeting">"Guiding our youth with administrative excellence, spiritual discipline, and wisdom, fostering a generation rooted in truth."</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right edge navigation progress dots -->
+        <div class="gls-progress" aria-hidden="true" id="gls-progress">
+            <span class="gls-dot" data-s="0"></span>
+            <span class="gls-dot" data-s="1"></span>
+            <span class="gls-dot" data-s="2"></span>
+            <span class="gls-dot" data-s="3"></span>
+            <span class="gls-dot" data-s="4"></span>
+            <span class="gls-dot" data-s="5"></span>
+        </div>
+
+        <!-- Visual Scroll Hint Element -->
+        <div class="gls-scroll-hint" id="gls-scroll-hint" aria-hidden="true">
+            <span>Scroll to Explore</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mock Section Below (e.g. History Section) -->
+    <div class="mock-section">
+        <span>Our Journey / History</span>
+    </div>
+
+    <!-- Required GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Scoped Showcase Script -->
+    <script src="js/guidedby.js"></script>
+</body>
+</html>
