@@ -151,12 +151,12 @@
   position: relative;
   width: 95%;
   max-width: 1400px;
-  height: 85vh;
+  height: 72vh;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2vh;
+  margin-top: 10vh;
 }
 
 /* Leader Layer */
@@ -189,7 +189,7 @@
 
 .gls-portrait {
   height: 100%;
-  max-height: 80vh;
+  max-height: 72vh;
   max-width: 100%;
   object-fit: contain;
   object-position: bottom center;
@@ -335,6 +335,10 @@
    ============================================================ */
 
 @media (max-width: 1024px) {
+  .gls-scroll-hint {
+    display: none;
+  }
+
   .gls-container {
     height: 85vh;
   }
