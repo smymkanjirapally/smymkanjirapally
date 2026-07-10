@@ -116,14 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function draw() {
         ctx.clearRect(0, 0, W, H);
 
-        // Dark Luxury Ambient Background Gradient
-        const bgGrad = ctx.createRadialGradient(W / 2, H / 2, 50, W / 2, H / 2, Math.max(W, H) * 0.8);
-        bgGrad.addColorStop(0, '#0f0f15');
-        bgGrad.addColorStop(0.5, '#07070a');
-        bgGrad.addColorStop(1, '#030305');
-        ctx.fillStyle = bgGrad;
-        ctx.fillRect(0, 0, W, H);
-
         // Draw light rays
         drawRays();
 

@@ -39,30 +39,32 @@
         
         <!-- Branding Text -->
         <div class="loader-branding">
-            <h1 class="loader-brand-title">SMYM KANJIRAPALLY DIOCESE</h1>
-            <p class="loader-brand-sub">Syro Malabar Youth Movement</p>
+            <h1 class="loader-brand-title">SMYM</h1>
+            <h2 class="loader-brand-sub">KANJIRAPALLY DIOCESE</h2>
+            <p class="loader-brand-tagline">"Embrace Christ, Reject Evil"</p>
         </div>
         
-        <!-- Celestial Circular Arc Loader -->
-        <div class="celestial-loader">
-            <div class="arc arc-1"></div>
-            <div class="arc arc-2"></div>
-            <div class="arc arc-3"></div>
-            <div class="celestial-center">
-                <span class="celestial-text">Loading<span class="dots">...</span></span>
-                <span class="celestial-percent" id="loader-percent">0%</span>
-            </div>
+        <!-- Premium Loading Animation (Uiverse) -->
+        <div class="loader">
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="text"><span>Loading</span></div>
+            <div class="line"></div>
         </div>
+
+        <!-- Minimal percent and status display -->
+        <div id="loader-percent" class="loader-percent-minimal">0%</div>
+        <div id="loader-message" class="loader-message-minimal">Preparing Experience...</div>
         
-        <!-- Dynamic Loading Message -->
-        <div class="loader-message" id="loader-message">Preparing Experience...</div>
-        
-        <!-- Premium Progress Bar -->
-        <div class="loader-progress-container">
-            <div class="loader-progress-bar">
-                <div class="loader-progress-fill" id="loader-progress-fill"></div>
-                <div class="loader-progress-shimmer"></div>
-            </div>
+        <!-- Hidden progress fill element to prevent JS exception -->
+        <div style="display: none;">
+            <div id="loader-progress-fill"></div>
         </div>
     </div>
 </div>
@@ -356,6 +358,7 @@
     <div class="exec-bg-particles" aria-hidden="true"></div>
     <div class="exec-bg-blur exec-bg-blur-1" aria-hidden="true"></div>
     <div class="exec-bg-blur exec-bg-blur-2" aria-hidden="true"></div>
+    <div class="exec-bg-blur exec-bg-blur-3" aria-hidden="true"></div>
     <div class="exec-bg-line exec-bg-line-1" aria-hidden="true"></div>
     <div class="exec-bg-line exec-bg-line-2" aria-hidden="true"></div>
 
@@ -376,12 +379,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/1.png" alt="Executive 1" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/1.jpeg" alt="Executive 1" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>1</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -393,12 +392,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/2.png" alt="Executive 2" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/2.jpeg" alt="Executive 2" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>2</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -410,12 +405,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/3.png" alt="Executive 3" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/3.jpeg" alt="Executive 3" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>3</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -427,12 +418,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/4.png" alt="Executive 4" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/4.jpeg" alt="Executive 4" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>4</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -444,12 +431,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/5.png" alt="Executive 5" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/5.jpeg" alt="Executive 5" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>5</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -461,12 +444,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/6.png" alt="Executive 6" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/6.jpeg" alt="Executive 6" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>6</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -478,12 +457,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/7.png" alt="Executive 7" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/7.jpeg" alt="Executive 7" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>7</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -495,12 +470,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/8.png" alt="Executive 8" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/8.jpeg" alt="Executive 8" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>8</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -512,12 +483,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/9.png" alt="Executive 9" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/9.jpeg" alt="Executive 9" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>9</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -529,12 +496,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/10.png" alt="Executive 10" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/10.jpeg" alt="Executive 10" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>10</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -546,12 +509,8 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/11.png" alt="Executive 11" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/11.jpeg" alt="Executive 11" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>11</span></div>
-                    </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
@@ -563,12 +522,86 @@
                     <div class="exec-card-glow"></div>
                     <div class="exec-card-sweep"></div>
                     <div class="exec-poster-wrap">
-                        <img src="assets/executives/12.png" alt="Executive 12" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <img src="assets/executives/12.jpeg" alt="Executive 12" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <div class="exec-poster-placeholder"><span>12</span></div>
                     </div>
-                    <div class="exec-card-body">
-                        <h3 class="exec-name">Executive Name</h3>
-                        <span class="exec-designation">Designation</span>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="exec-premium-card" data-index="12" data-delay="0">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/13.jpeg" alt="Executive 13" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>13</span></div>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 14 -->
+            <div class="exec-premium-card" data-index="13" data-delay="1">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/14.jpeg" alt="Executive 14" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>14</span></div>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 15 -->
+            <div class="exec-premium-card" data-index="14" data-delay="2">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/15.jpeg" alt="Executive 15" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>15</span></div>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 16 -->
+            <div class="exec-premium-card" data-index="15" data-delay="3">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/16.jpeg" alt="Executive 16" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>16</span></div>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 17 -->
+            <div class="exec-premium-card" data-index="16" data-delay="0">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/17.jpeg" alt="Executive 17" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>17</span></div>
+                    </div>
+                    <div class="exec-card-border"></div>
+                </div>
+            </div>
+
+            <!-- Card 18 -->
+            <div class="exec-premium-card" data-index="17" data-delay="1">
+                <div class="exec-card-inner">
+                    <div class="exec-card-glow"></div>
+                    <div class="exec-card-sweep"></div>
+                    <div class="exec-poster-wrap">
+                        <img src="assets/executives/18.jpeg" alt="Executive 18" class="exec-poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="exec-poster-placeholder"><span>18</span></div>
                     </div>
                     <div class="exec-card-border"></div>
                 </div>
