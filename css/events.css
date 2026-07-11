@@ -28,8 +28,6 @@
 }
 
 /* ── Reset & Base ─────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 body.events-page {
     font-family: var(--font-main);
     background: var(--off-white);
