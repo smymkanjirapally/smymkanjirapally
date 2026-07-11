@@ -21,7 +21,7 @@ const EVENTS = (() => {
     /* ═══════ STATE ═══════ */
     let allEvents = [];      // All parsed events from JSON
     let filtered  = [];      // Currently displayed subset
-    let tab       = 'upcoming'; // 'upcoming' | 'past'
+    let tab       = 'all'; // 'all' | 'upcoming' | 'past'
     let searchQ   = '';
     let countdownInterval = null;
     let nextEventObj = null;
@@ -174,7 +174,7 @@ const EVENTS = (() => {
         // Filter events by tab + search
         const now = new Date(); now.setHours(0,0,0,0);
         filtered = allEvents.filter(e => {
-            const matchTab = tab === 'upcoming' ? !e.isPast : e.isPast;
+            const matchTab = tab === 'all' ? true : (tab === 'upcoming' ? !e.isPast : e.isPast);
             const matchQ   = !searchQ || e.name.toLowerCase().includes(searchQ.toLowerCase());
             return matchTab && matchQ;
         });
@@ -212,14 +212,13 @@ const EVENTS = (() => {
             const isRange = /[,\/]/.test(ev.rawDate) && !/^\d{4}-/.test(ev.rawDate);
 
             const statusClass = ev.isPast ? 'past' : 'upcoming';
-            const statusLabel = ev.isPast ? 'Past' : (isNext ? '🔥 Next Event' : 'Upcoming');
+            const statusLabel = ev.isPast ? 'Past' : (isNext ? 'Next Event' : 'Upcoming');
 
             card.innerHTML = `
                 <div class="ev-card-connector"></div>
                 <div class="ev-card-dot"></div>
                 <div class="ev-card-inner">
                     ${isNext ? '<span class="ev-next-card-badge">NEXT EVENT</span>' : ''}
-                    <span class="ev-card-icon">${ev.icon}</span>
                     ${isRange
                         ? `<div class="ev-card-date-range">${ev.rawDate}</div>`
                         : `<div class="ev-card-date-day">${day}</div>
@@ -237,8 +236,8 @@ const EVENTS = (() => {
             container.appendChild(card);
         });
 
-        // Auto-scroll to next event if on upcoming tab
-        if (tab === 'upcoming' && nextEventObj) {
+        // Auto-scroll to next event if on upcoming or all tab
+        if ((tab === 'upcoming' || tab === 'all') && nextEventObj) {
             requestAnimationFrame(() => scrollToNext());
         }
     }
@@ -300,6 +299,7 @@ const EVENTS = (() => {
     /* ═══════ TAB SWITCH ═══════ */
     function switchTab(newTab) {
         tab = newTab;
+        document.getElementById('ev-tab-all')?.classList.toggle('active', tab === 'all');
         document.getElementById('ev-tab-upcoming')?.classList.toggle('active', tab === 'upcoming');
         document.getElementById('ev-tab-past')?.classList.toggle('active', tab === 'past');
         render();

@@ -65,7 +65,10 @@
 <div class="ev-controls-bar" id="ev-controls">
     <!-- Tab Switcher -->
     <div class="ev-tab-switch">
-        <button class="ev-tab-btn active" id="ev-tab-upcoming" onclick="EVENTS.switchTab('upcoming')">
+        <button class="ev-tab-btn active" id="ev-tab-all" onclick="EVENTS.switchTab('all')">
+            <span class="ev-tab-icon">📋</span> All Events
+        </button>
+        <button class="ev-tab-btn" id="ev-tab-upcoming" onclick="EVENTS.switchTab('upcoming')">
             <span class="ev-tab-icon">📅</span> Upcoming
         </button>
         <button class="ev-tab-btn" id="ev-tab-past" onclick="EVENTS.switchTab('past')">
@@ -88,67 +91,7 @@
     </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-  TIMELINE SECTION
-══════════════════════════════════════════ -->
-<section class="ev-timeline-section" id="ev-timeline-section">
 
-    <!-- Navigation Arrows -->
-    <button class="ev-nav-arrow ev-nav-prev" id="ev-nav-prev" onclick="EVENTS.scrollTimeline(-1)" aria-label="Previous events">
-        <span>&#8592;</span>
-    </button>
-    <button class="ev-nav-arrow ev-nav-next" id="ev-nav-next" onclick="EVENTS.scrollTimeline(1)" aria-label="Next events">
-        <span>&#8594;</span>
-    </button>
-
-    <!-- Scrollable Timeline Track -->
-    <div class="ev-timeline-outer" id="ev-timeline-outer">
-        <div class="ev-timeline-track" id="ev-timeline-track">
-
-            <!-- Timeline Line (horizontal) -->
-            <div class="ev-timeline-line" id="ev-timeline-line">
-                <div class="ev-timeline-glow"></div>
-            </div>
-
-            <!-- Cards injected by JS into this container -->
-            <div class="ev-cards-container" id="ev-cards-container">
-                <!-- Event cards generated dynamically -->
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-  EMPTY STATE
-══════════════════════════════════════════ -->
-<div class="ev-empty-state" id="ev-empty-state" style="display:none;">
-    <div class="ev-empty-icon">📭</div>
-    <h3>No events found</h3>
-    <p>Try adjusting your search or switching tabs.</p>
-</div>
-
-<!-- ══════════════════════════════════════════
-  EVENT MODAL
-══════════════════════════════════════════ -->
-<div class="ev-modal-backdrop" id="ev-modal-backdrop" onclick="EVENTS.closeModal()"></div>
-<div class="ev-modal" id="ev-modal" role="dialog" aria-modal="true" aria-labelledby="ev-modal-title">
-    <button class="ev-modal-close" onclick="EVENTS.closeModal()" aria-label="Close">✕</button>
-    <div class="ev-modal-header">
-        <div class="ev-modal-badge" id="ev-modal-badge">📅</div>
-        <div class="ev-modal-date-block">
-            <span class="ev-modal-day" id="ev-modal-day">-</span>
-            <span class="ev-modal-month" id="ev-modal-month">-</span>
-            <span class="ev-modal-year" id="ev-modal-year">-</span>
-        </div>
-    </div>
-    <h2 class="ev-modal-title" id="ev-modal-title">Event Name</h2>
-    <p class="ev-modal-full-date" id="ev-modal-full-date">-</p>
-    <div class="ev-modal-status-row">
-        <span class="ev-modal-status" id="ev-modal-status">-</span>
-        <span class="ev-modal-countdown-text" id="ev-modal-countdown-text"></span>
-    </div>
-</div>
 
 <!-- Scripts -->
 <script src="js/events.js"></script>

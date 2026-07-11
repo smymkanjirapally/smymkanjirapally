@@ -865,16 +865,37 @@
         <div class="section-label reveal-fade">Coming Up</div>
         <h2 class="section-title reveal-up">Events &amp; <em>Updates</em></h2>
 
-        <!-- Live teaser: 4 upcoming events loaded from data/events.json -->
-        <div class="events-grid" id="ev-teaser-grid">
-            <!-- Cards injected by script.js teaser loader -->
+        <!-- Interactive Horizontal Timeline -->
+        <div class="ev-timeline-section" id="ev-timeline-section">
+            <!-- Navigation Arrows -->
+            <button class="ev-nav-arrow ev-nav-prev" id="ev-nav-prev" onclick="EVENTS.scrollTimeline(-1)" aria-label="Previous events">
+                <span>&#8592;</span>
+            </button>
+            <button class="ev-nav-arrow ev-nav-next" id="ev-nav-next" onclick="EVENTS.scrollTimeline(1)" aria-label="Next events">
+                <span>&#8594;</span>
+            </button>
+
+            <!-- Scrollable Timeline Track -->
+            <div class="ev-timeline-outer" id="ev-timeline-outer">
+                <div class="ev-timeline-track" id="ev-timeline-track">
+                    <!-- Timeline Line (horizontal) -->
+                    <div class="ev-timeline-line" id="ev-timeline-line">
+                        <div class="ev-timeline-glow"></div>
+                    </div>
+
+                    <!-- Cards injected by JS into this container -->
+                    <div class="ev-cards-container" id="ev-cards-container">
+                        <!-- Event cards generated dynamically -->
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- CTA to full interactive timeline -->
-        <div style="text-align:center; margin-top:2.5rem;" class="reveal-fade">
-            <a href="events.html" class="cta-primary" style="display:inline-flex; align-items:center; gap:0.6rem;">
-                View Full Timeline &amp; Calendar &nbsp;&#8594;
-            </a>
+        <!-- Empty State -->
+        <div class="ev-empty-state" id="ev-empty-state" style="display:none;">
+            <div class="ev-empty-icon">📭</div>
+            <h3>No events found</h3>
+            <p>Try adjusting your search or switching tabs.</p>
         </div>
     </div>
 </section>
@@ -1061,5 +1082,26 @@
 <script src="js/script.js"></script>
 <script src="js/guidedby.js"></script>
 <script src="js/moments.js"></script>
+<script src="js/events.js"></script>
+
+<!-- Event Modal -->
+<div class="ev-modal-backdrop" id="ev-modal-backdrop" onclick="EVENTS.closeModal()"></div>
+<div class="ev-modal" id="ev-modal" role="dialog" aria-modal="true" aria-labelledby="ev-modal-title">
+    <button class="ev-modal-close" onclick="EVENTS.closeModal()" aria-label="Close">✕</button>
+    <div class="ev-modal-header">
+        <div class="ev-modal-badge" id="ev-modal-badge">📅</div>
+        <div class="ev-modal-date-block">
+            <span class="ev-modal-day" id="ev-modal-day">-</span>
+            <span class="ev-modal-month" id="ev-modal-month">-</span>
+            <span class="ev-modal-year" id="ev-modal-year">-</span>
+        </div>
+    </div>
+    <h2 class="ev-modal-title" id="ev-modal-title">Event Name</h2>
+    <p class="ev-modal-full-date" id="ev-modal-full-date">-</p>
+    <div class="ev-modal-status-row">
+        <span class="ev-modal-status" id="ev-modal-status">-</span>
+        <span class="ev-modal-countdown-text" id="ev-modal-countdown-text"></span>
+    </div>
+</div>
 </body>
 </html>
