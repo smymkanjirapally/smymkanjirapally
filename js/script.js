@@ -542,4 +542,128 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ═══════════════════════════════════════════════════════
+       EVENTS TEASER LOADER — fills the homepage events grid
+       with the next 4 upcoming events from data/events.json
+    ═══════════════════════════════════════════════════════ */
+    (async function loadEventTeaser() {
+        const grid = document.getElementById('ev-teaser-grid');
+        if (!grid) return;
+
+        const MONTHS_SHORT = ['JAN','FEB','MAR','APR','MAY','JUN',
+                              'JUL','AUG','SEP','OCT','NOV','DEC'];
+        const MONTHS_LONG  = ['January','February','March','April','May','June',
+                              'July','August','September','October','November','December'];
+
+        function parseDate(str) {
+            if (!str) return null;
+            if (/^\d{4}-\d{2}-\d{2}$/.test(str)) {
+                const d = new Date(str);
+                return isNaN(d) ? null : d;
+            }
+            const parts = str.replace(/[-,]/g, '/').split('/').filter(Boolean);
+            if (parts.length >= 3) {
+                const year  = parts.find(p => p.length === 4);
+                const month = parts.find(p => p.length <= 2 && parseInt(p) >= 1 && parseInt(p) <= 12 && p !== parts[0]);
+                const day   = parts[0];
+                if (year && month && day) {
+                    const d = new Date(`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`);
+                    return isNaN(d) ? null : d;
+                }
+            }
+            return null;
+        }
+
+        function titleCase(str) {
+            return str.replace(/\w\S*/g, t => t.charAt(0).toUpperCase() + t.slice(1).toLowerCase());
+        }
+
+        try {
+            const res = await fetch('data/events.json');
+            if (!res.ok) return;
+            const raw = await res.json();
+
+            const now      = new Date();
+            const today    = new Date(now); today.setHours(0,0,0,0);
+            const thisMonth = now.getMonth();
+            const thisYear  = now.getFullYear();
+
+            // Filter: events in THIS month that haven't passed yet (today or future)
+            let thisMonthEvents = raw
+                .map(ev => ({ ...ev, parsedDate: parseDate(ev.date) }))
+                .filter(ev => {
+                    if (!ev.parsedDate) return false;
+                    return ev.parsedDate.getMonth() === thisMonth
+                        && ev.parsedDate.getFullYear() === thisYear
+                        && ev.parsedDate >= today;
+                })
+                .sort((a, b) => a.parsedDate - b.parsedDate);
+
+            // If no more events this month, show next 4 upcoming instead
+            const fallback = thisMonthEvents.length === 0;
+            if (fallback) {
+                thisMonthEvents = raw
+                    .map(ev => ({ ...ev, parsedDate: parseDate(ev.date) }))
+                    .filter(ev => ev.parsedDate && ev.parsedDate >= today)
+                    .sort((a, b) => a.parsedDate - b.parsedDate)
+                    .slice(0, 4);
+            }
+
+            // Build month heading above the grid
+            const section = grid.closest('.container');
+            if (section) {
+                // Remove old sub-label if it exists
+                const old = section.querySelector('.ev-month-teaser-label');
+                if (old) old.remove();
+
+                const label = document.createElement('div');
+                label.className = 'ev-month-teaser-label reveal-fade';
+                const monthLabel = fallback
+                    ? 'Upcoming Events'
+                    : `Events This Month — <em>${MONTHS_LONG[thisMonth]} ${thisYear}</em>`;
+                label.innerHTML = monthLabel;
+                grid.before(label);
+            }
+
+            // Show max 4 cards in the 2-column grid
+            const toShow = thisMonthEvents.slice(0, 4);
+
+            toShow.forEach((ev, i) => {
+                const d = ev.parsedDate;
+                const isToday = d.toDateString() === today.toDateString();
+                const card = document.createElement('div');
+                card.className = `event-card glass reveal-fade${isToday ? ' ev-card-today' : ''}`;
+                card.style.setProperty('--i', i);
+                card.innerHTML = `
+                    <div class="event-date">
+                        <span class="event-month">${MONTHS_SHORT[d.getMonth()]}</span>
+                        <span class="event-day">${d.getDate()}</span>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type${isToday ? ' gold-type' : ''}">
+                            ${isToday ? '🔥 Today' : 'Program'}
+                        </span>
+                        <h3>${titleCase(ev.name)}</h3>
+                        <p>${d.toLocaleDateString('en-IN', { weekday:'long', month:'long', day:'numeric' })}</p>
+                    </div>
+                    <div class="event-arrow">→</div>
+                `;
+                card.addEventListener('click', () => { window.location.href = 'events.html'; });
+                grid.appendChild(card);
+            });
+
+            // If fewer than 4 this month, show "See All" note
+            if (thisMonthEvents.length > 4) {
+                const more = document.createElement('div');
+                more.className = 'ev-more-note reveal-fade';
+                more.innerHTML = `+${thisMonthEvents.length - 4} more events this month &nbsp;<a href="events.html">View All →</a>`;
+                grid.after(more);
+            }
+
+        } catch (e) {
+            // Graceful fallback
+        }
+    })();
+
 });
+

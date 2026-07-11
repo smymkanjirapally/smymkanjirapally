@@ -18,6 +18,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/guidedby.css">
+    <link rel="stylesheet" href="css/events.css">
 </head>
 <body>
 
@@ -864,85 +865,56 @@
         <div class="section-label reveal-fade">Coming Up</div>
         <h2 class="section-title reveal-up">Events &amp; <em>Updates</em></h2>
 
-        <div class="events-grid">
-            <div class="event-card glass reveal-fade" data-tilt style="--i:0">
-                <div class="event-date">
-                    <span class="event-month">JUL</span>
-                    <span class="event-day">15</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-type">Formation</span>
-                    <h3>Camp Insight 2025</h3>
-                    <p>Annual flagship residential leadership camp bringing together SMYM members from across the diocese.</p>
-                </div>
-                <div class="event-arrow">→</div>
-            </div>
+        <!-- Live teaser: 4 upcoming events loaded from data/events.json -->
+        <div class="events-grid" id="ev-teaser-grid">
+            <!-- Cards injected by script.js teaser loader -->
+        </div>
 
-            <div class="event-card glass reveal-fade" data-tilt style="--i:1">
-                <div class="event-date">
-                    <span class="event-month">AUG</span>
-                    <span class="event-day">02</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-type spiritual">Spiritual</span>
-                    <h3>Abide — Youth Adoration</h3>
-                    <p>Diocesan youth adoration night and Eucharistic retreat for deep spiritual encounter.</p>
-                </div>
-                <div class="event-arrow">→</div>
-            </div>
-
-            <div class="event-card glass reveal-fade" data-tilt style="--i:2">
-                <div class="event-date">
-                    <span class="event-month">SEP</span>
-                    <span class="event-day">20</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-type social">Social</span>
-                    <h3>Anti-Drug Campus Drive</h3>
-                    <p>Diocesan-wide campus awareness campaign targeting substance abuse prevention.</p>
-                </div>
-                <div class="event-arrow">→</div>
-            </div>
-
-            <div class="event-card glass reveal-fade" data-tilt style="--i:3">
-                <div class="event-date">
-                    <span class="event-month">NOV</span>
-                    <span class="event-day">08</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-type gold-type">Sports</span>
-                    <h3>Serve & Smash Volleyball</h3>
-                    <p>Diocesan volleyball tournament promoting interaction, sportsmanship, and physical health among parish units.</p>
-                </div>
-                <div class="event-arrow">→</div>
-            </div>
+        <!-- CTA to full interactive timeline -->
+        <div style="text-align:center; margin-top:2.5rem;" class="reveal-fade">
+            <a href="events.html" class="cta-primary" style="display:inline-flex; align-items:center; gap:0.6rem;">
+                View Full Timeline &amp; Calendar &nbsp;&#8594;
+            </a>
         </div>
     </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  SECTION 8: GALLERY
+  SECTION 8: GALLERY (MOMENTS)
 ══════════════════════════════════════════ -->
-<section class="section gallery-section" id="gallery">
+<section class="gallery-section" id="gallery">
     <div class="container">
-        <div class="section-label reveal-fade">Moments</div>
-        <h2 class="section-title reveal-up">Life at <em>SMYM</em></h2>
+        <!-- Top Heading -->
+        <div class="moments-header">
+            <div class="section-label">MOMENTS</div>
+            <h2 class="section-title">Life at <em>SMYM</em></h2>
+        </div>
 
-        <div class="gallery-grid reveal-fade">
-            <div class="gallery-item g-tall" style="background: linear-gradient(135deg,#8B000022,#D4AF3722), url('') center/cover;">
-                <div class="gallery-overlay glass"><span>Youth Conference</span></div>
+        <!-- Creative Bento Grid -->
+        <div class="moments-bento-grid" id="moments-grid">
+            <div class="moments-card mb-card-1">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.18 PM.jpeg" alt="SMYM Moment 1" loading="lazy" />
             </div>
-            <div class="gallery-item" style="background: linear-gradient(135deg,#D4AF3722,#fff0) center/cover;">
-                <div class="gallery-overlay glass"><span>Camp Insight</span></div>
+            <div class="moments-card mb-card-2">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.19 PM.jpeg" alt="SMYM Moment 2" loading="lazy" />
             </div>
-            <div class="gallery-item" style="background: linear-gradient(135deg,#8B000015,#FAF9F6) center/cover;">
-                <div class="gallery-overlay glass"><span>Youth Adoration</span></div>
+            <div class="moments-card mb-card-3">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.20 PM (1).jpeg" alt="SMYM Moment 3" loading="lazy" />
             </div>
-            <div class="gallery-item g-wide" style="background: linear-gradient(135deg,#FAF9F6,#D4AF3722) center/cover;">
-                <div class="gallery-overlay glass"><span>Community Service</span></div>
+            <div class="moments-card mb-card-4">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.20 PM (2).jpeg" alt="SMYM Moment 4" loading="lazy" />
             </div>
-            <div class="gallery-item" style="background: linear-gradient(135deg,#8B000010,#D4AF3715) center/cover;">
-                <div class="gallery-overlay glass"><span>Retreats</span></div>
+            <div class="moments-card mb-card-5">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.20 PM.jpeg" alt="SMYM Moment 5" loading="lazy" />
+            </div>
+            <div class="moments-card mb-card-6">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.21 PM.jpeg" alt="SMYM Moment 6" loading="lazy" />
+            </div>
+            <div class="moments-card mb-card-7">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.22 PM (1).jpeg" alt="SMYM Moment 7" loading="lazy" />
+            </div>
+            <div class="moments-card mb-card-8">
+                <img src="assets/Moments/WhatsApp Image 2026-07-10 at 10.40.22 PM.jpeg" alt="SMYM Moment 8" loading="lazy" />
             </div>
         </div>
     </div>
@@ -1068,7 +1040,7 @@
                 <div class="footer-col footer-contact">
                     <h4>Connect</h4>
                     <p>Stay connected with SMYM Kanjirappally for the latest events, news, and spiritual reflections.</p>
-                    <a href="mailto:smym@kanjirappally.in" class="footer-email">smym@kanjirappally.in</a>
+                    <a href="mailto:smymkanjirapallyweb@gmail.com" class="footer-email">smymkanjirapallyweb@gmail.com</a>
                 </div>
             </div>
 
@@ -1088,5 +1060,6 @@
 <script src="js/particles.js"></script>
 <script src="js/script.js"></script>
 <script src="js/guidedby.js"></script>
+<script src="js/moments.js"></script>
 </body>
 </html>

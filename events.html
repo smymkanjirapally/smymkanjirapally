@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Updates | SMYM Kanjirappally</title>
+    <meta name="description" content="Explore all upcoming and past events of SMYM Kanjirappally Diocese — Youth programs, gatherings, sports, missions and more.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/events.css">
+</head>
+<body class="events-page">
+
+<!-- ══════════════════════════════════════════
+  TOP NAVIGATION BAR
+══════════════════════════════════════════ -->
+<nav class="ev-navbar">
+    <a href="index.html" class="ev-nav-logo">
+        <img src="logo/logo.png" alt="SMYM Logo" class="ev-logo-img">
+        <span class="ev-logo-text">SMYM <em>Kanjirappally</em></span>
+    </a>
+    <a href="index.html" class="ev-back-btn">
+        <span class="ev-back-arrow">←</span>
+        Back to Home
+    </a>
+</nav>
+
+<!-- ══════════════════════════════════════════
+  EVENTS HERO
+══════════════════════════════════════════ -->
+<section class="ev-hero" id="ev-hero">
+    <div class="ev-hero-bg"></div>
+    <div class="ev-hero-content">
+        <div class="ev-hero-label">SMYM Kanjirappally</div>
+        <h1 class="ev-hero-title">Events &amp; <em>Updates</em></h1>
+        <p class="ev-hero-sub">Programs, gatherings and milestones throughout the year</p>
+
+        <!-- Countdown to Next Event -->
+        <div class="ev-countdown-wrapper" id="ev-countdown-wrapper">
+            <div class="ev-next-badge">NEXT EVENT</div>
+            <div class="ev-countdown-name" id="ev-next-name">Loading…</div>
+            <div class="ev-countdown-timer" id="ev-countdown-timer">
+                <div class="ev-ctt-block"><span id="ev-cd-days">--</span><label>Days</label></div>
+                <div class="ev-ctt-sep">:</div>
+                <div class="ev-ctt-block"><span id="ev-cd-hours">--</span><label>Hours</label></div>
+                <div class="ev-ctt-sep">:</div>
+                <div class="ev-ctt-block"><span id="ev-cd-mins">--</span><label>Mins</label></div>
+                <div class="ev-ctt-sep">:</div>
+                <div class="ev-ctt-block"><span id="ev-cd-secs">--</span><label>Secs</label></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  CONTROLS BAR
+══════════════════════════════════════════ -->
+<div class="ev-controls-bar" id="ev-controls">
+    <!-- Tab Switcher -->
+    <div class="ev-tab-switch">
+        <button class="ev-tab-btn active" id="ev-tab-upcoming" onclick="EVENTS.switchTab('upcoming')">
+            <span class="ev-tab-icon">📅</span> Upcoming
+        </button>
+        <button class="ev-tab-btn" id="ev-tab-past" onclick="EVENTS.switchTab('past')">
+            <span class="ev-tab-icon">📖</span> Past
+        </button>
+    </div>
+
+    <!-- Search -->
+    <div class="ev-search-wrap">
+        <span class="ev-search-icon">🔍</span>
+        <input type="text" id="ev-search" class="ev-search-input" placeholder="Search events…" oninput="EVENTS.onSearch(this.value)">
+    </div>
+
+    <!-- Month Filter -->
+    <div class="ev-month-wrap">
+        <label for="ev-month-select" class="ev-month-label">Jump to Month</label>
+        <select id="ev-month-select" class="ev-month-select" onchange="EVENTS.jumpToMonth(this.value)">
+            <option value="">All Months</option>
+        </select>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+  TIMELINE SECTION
+══════════════════════════════════════════ -->
+<section class="ev-timeline-section" id="ev-timeline-section">
+
+    <!-- Navigation Arrows -->
+    <button class="ev-nav-arrow ev-nav-prev" id="ev-nav-prev" onclick="EVENTS.scrollTimeline(-1)" aria-label="Previous events">
+        <span>&#8592;</span>
+    </button>
+    <button class="ev-nav-arrow ev-nav-next" id="ev-nav-next" onclick="EVENTS.scrollTimeline(1)" aria-label="Next events">
+        <span>&#8594;</span>
+    </button>
+
+    <!-- Scrollable Timeline Track -->
+    <div class="ev-timeline-outer" id="ev-timeline-outer">
+        <div class="ev-timeline-track" id="ev-timeline-track">
+
+            <!-- Timeline Line (horizontal) -->
+            <div class="ev-timeline-line" id="ev-timeline-line">
+                <div class="ev-timeline-glow"></div>
+            </div>
+
+            <!-- Cards injected by JS into this container -->
+            <div class="ev-cards-container" id="ev-cards-container">
+                <!-- Event cards generated dynamically -->
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  EMPTY STATE
+══════════════════════════════════════════ -->
+<div class="ev-empty-state" id="ev-empty-state" style="display:none;">
+    <div class="ev-empty-icon">📭</div>
+    <h3>No events found</h3>
+    <p>Try adjusting your search or switching tabs.</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+  EVENT MODAL
+══════════════════════════════════════════ -->
+<div class="ev-modal-backdrop" id="ev-modal-backdrop" onclick="EVENTS.closeModal()"></div>
+<div class="ev-modal" id="ev-modal" role="dialog" aria-modal="true" aria-labelledby="ev-modal-title">
+    <button class="ev-modal-close" onclick="EVENTS.closeModal()" aria-label="Close">✕</button>
+    <div class="ev-modal-header">
+        <div class="ev-modal-badge" id="ev-modal-badge">📅</div>
+        <div class="ev-modal-date-block">
+            <span class="ev-modal-day" id="ev-modal-day">-</span>
+            <span class="ev-modal-month" id="ev-modal-month">-</span>
+            <span class="ev-modal-year" id="ev-modal-year">-</span>
+        </div>
+    </div>
+    <h2 class="ev-modal-title" id="ev-modal-title">Event Name</h2>
+    <p class="ev-modal-full-date" id="ev-modal-full-date">-</p>
+    <div class="ev-modal-status-row">
+        <span class="ev-modal-status" id="ev-modal-status">-</span>
+        <span class="ev-modal-countdown-text" id="ev-modal-countdown-text"></span>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/events.js"></script>
+
+</body>
+</html>
